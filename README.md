@@ -33,3 +33,36 @@ Lastly, before the loopfilters simple quantisers are added. These generate a sim
 
 Lastly the output voltages for the 3 output phases are calculated. I do not use SVM or anything like that, each phase is calculated independently of the other 2. Simple 1st order noise shapers are used to deal with the quantisation inherent in the PWM process. The output amplitude of the loop filter (V_r) together with the inductor based (no fieldweakening) voltage shift (V_i) is rotated over motor phase phi . Then controller output phase A is the real part of this complex voltage. For phase B the complex voltage is rotated 120 degrees forward and the real part is taken. For phase C a rotation over -120 degrees is applied.
 
+What you have to realise is that running a motor is a 2-dimensional control problem. In a simple sensored FOC motor phase is known and the 2-dimensional control determines the real and imaginary output voltage, based on real and imaginary wanted motor current. For sensorless FOC the imaginary output voltage is known (calculated from motor inductance, throttle current and rotor speed), the 2 dimensional control determine the rotor phase and real output voltage (again based on wanted motor current)
+
+The control is thus always based on wanting 2 variables, namely the motor real current (throttle current) and motor imaginary current (fieldweak current) . To be able to influence these 2 independent variables you NEED to be able to independently control 2 motor controller output variables. For sensorless these 2 independent motor controller output variables are the real amplitude and rotor phase. You CANNOT let the real amplitude run into the limiter ! At that point you only have one control variable left (the phase) and you CANNOT independently influence the 2 input wanted current anymore. You absolutely NEED TWO independent output control variables to be able to control TWO wanted input variables !
+
+To prevent saturation of the output voltage (and thus losing one independent output variable) a scheme was put in place where an increase in output amplitude automatically reduces the throttle current. In such a way the controller will never saturate and you will always have TWO independent control variables available.
+
+![](DSC02272-800x800.jpg)
+
+Just before the output voltage limiter starts reducing the throttle current the field weakening kicks in. I think the default for the output voltage limiter to kick in is 98% of max amplitude, while the default for the field weakening is 95%. So once the amplitude exceeds the 95% level the controller automatically starts to ask for (more) field weakening current. The effect of asking for more field weakening current is that the output voltage is automatically reduced (as due to the field weakening the wanted torque current can be achieved for a lower output voltage). The net effect of this is that the output voltage is stuck at 95% while the field weakening current is increased.
+
+Once certain conditions apply and no more field weakening can be applied, the controller output voltage will increase above 95%. Then once it exceeds 98% the wanted torque current will automatically be reduced until a stable operating point is achieved. During this whole process there will always be 2 output variables available to control 2 input variables.
+
+Now the amount of field weakening current you can apply is not an arbitrary thing. On the one hand there is the maximum you want to set based on max phase current, max battery current etc. This is the value entered in the menu structure, where I recommend 0A if you want no field weakening (it will just pass the 95% level without applying field weakening) or 70% of max phase amps if you do want field weakening. The thing is though that if you apply TOO MUCH field weakening the motor will actually SLOW DOWN !! There is a second condition determining the max field weakening current that you can apply !
+
+![](DSC02273-800x800.jpg)
+
+In the above picture the blue circle represents all possible max output voltages the controller can generate. In the above picture in this particular case the controller output voltage is the light blue voltage vector V_out. The motor voltage is the green vector (along the real axis) V_bemf. Notice that this voltage is larger than the controller can generate. On top of the green motor voltage vector you have the pink motor impedance voltage vector as caused by the real motor current I_torque. This vector is somewhere along a line (dotted pink) at an angle determine by the motor impedance (in purple). Finally the orange voltage vector is the motor impedance combined with the imaginary motor current I_fieldweak. This orange vector is always at a 90 degrees angle with the pink vector. Note that the sum of motor V_bemf (green vector) and motor impedance voltage (pink and orange vectors) ALWAYS adds up to the controller output voltage vector (light blue) and that this is ALWAYS on the dark blue circle of max possible output voltages.
+
+![](DSC02274-800x800.jpg)
+
+Increasing the field weakening curent I_fieldweak means an increase in lenght of the orange voltage vector. This causes a move of the light blue controller output voltage vector along the dark blue circle of max possible voltages. In this way the pink voltage vector is stretched out, meaning a higher I_torque is achieved. This then in turn means more motor torque and probably a higher motor speed.
+
+But you can see from the picture that there is a maximum. There is a clear tipping point where the sum of light blue vector and orange vector leads to a maximum length of the pink vector.
+
+![](DSC02275-800x800.jpg)
+
+Increasing the orange vector will lead to a decrease of pink vector. Meaning more field weakening current will actually lead to a reduction in torque current.
+
+The limit for the length of the orange vector is there where the angle of the light blue vector is that of the pink vector. Or: the limit for the fieldweakening current is there where the angle of the controller output voltage vector is that of the motor impedance.
+
+So the controller increases the field weakening current to try to maintain the 95% output voltage level. All the while it observes the controller output voltage angle and compares this to the motor impedance angle. If the voltage angle exceeds the impedance angle it will stop increasing the field weakening current. This is a dynamic process as there are constant changes in motor speed (changes the impedance angle !) and motor controller output voltage vector (remember that this is controlled by the 2 control loops on which the field weakening has no impact).
+
+This is the reason that the actually applied field weakening current is typically less than the set maximum, is constantly changing and in practise is difficult to predict.
