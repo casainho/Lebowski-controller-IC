@@ -3,7 +3,7 @@ This is an archive of the Lebowski controller IC 2.A1 source code and (short) ex
 
 ![](Screenshot%20from%202020-03-01%2014-48-37.png)
 
-You [view the source code here](https://github.com/OpenSource-EBike-firmware/Lebowski-controller-IC/tree/master/src/Lebowski_2A1/30F_powerstart_v2pA1.X) or [download the original ZIP file here](https://github.com/OpenSource-EBike-firmware/Lebowski-controller-IC/raw/master/src/Lebowski_2A1.zip).
+You can [view the source code here](https://github.com/OpenSource-EBike-firmware/Lebowski-controller-IC/tree/master/src/Lebowski_2A1/30F_powerstart_v2pA1.X) or [download the original ZIP file here](https://github.com/OpenSource-EBike-firmware/Lebowski-controller-IC/raw/master/src/Lebowski_2A1.zip).
 
 # Original notes shared on forum
 
