@@ -1,0 +1,2435 @@
+Microchip Technology Inc, v1.26 (A)
+
+Tool Name:
+  /opt/microchip/xc16/v1.26/bin/bin/../bin/coff-ld
+
+Command:
+  -p30F4011 \
+  -o \
+  dist/default/production/30F_powerstart_v2pA1.X.production.cof \
+  -L/opt/microchip/xc16/v1.26/bin/bin/.. \
+  -L/opt/microchip/xc16/v1.26/bin/bin/../../lib \
+  -L/opt/microchip/xc16/v1.26/bin/bin/../../support/PIC24E/gld \
+  -L/opt/microchip/xc16/v1.26/bin/bin/../../support/PIC24F/gld \
+  -L/opt/microchip/xc16/v1.26/bin/bin/../../support/PIC24H/gld \
+  -L/opt/microchip/xc16/v1.26/bin/bin/../../support/dsPIC30F/gld \
+  -L/opt/microchip/xc16/v1.26/bin/bin/../../support/dsPIC33E/gld \
+  -L/opt/microchip/xc16/v1.26/bin/bin/../../support/dsPIC33F/gld \
+  build/default/production/reset_vector.o \
+  build/default/production/init_interrupts.o \
+  build/default/production/subrout_str.o \
+  build/default/production/subrout_232.o \
+  build/default/production/global_variables.o \
+  build/default/production/fill_pwm_and_sin_arrays.o \
+  build/default/production/motor_sinus.o \
+  build/default/production/timers.o \
+  build/default/production/PWM.o \
+  build/default/production/ADC.o \
+  build/default/production/monitoring.o \
+  build/default/production/initialise.o \
+  build/default/production/demod.o \
+  build/default/production/angle_amplitude.o \
+  build/default/production/throttle_open.o \
+  build/default/production/can_initialise.o \
+  build/default/production/throttle_read.o \
+  build/default/production/can_motor.o \
+  build/default/production/main_motor.o \
+  build/default/production/LEDs.o \
+  build/default/production/current_control.o \
+  build/default/production/backemf_phase_control.o \
+  build/default/production/safety.o \
+  build/default/production/inverse_vbat.o \
+  build/default/production/prog_mem.o \
+  build/default/production/menu structure/main_menu.o \
+  build/default/production/menu structure/menu_pwm.o \
+  build/default/production/menu structure/menu_functions.o \
+  build/default/production/menu structure/menu_throttle.o \
+  build/default/production/menu structure/menu_throttle_functions.o \
+  build/default/production/menu structure/menu_currents.o \
+  build/default/production/menu structure/menu_erpms.o \
+  build/default/production/menu structure/menu_battery.o \
+  build/default/production/menu structure/menu_sensors.o \
+  build/default/production/menu structure/menu_foc.o \
+  build/default/production/menu structure/convert_to_readable_L_and_R.o \
+  build/default/production/menu structure/motor_impedance_measurement.o \
+  build/default/production/menu structure/menu_loop_coeffs.o \
+  build/default/production/menu structure/menu_filters.o \
+  build/default/production/menu structure/menu_can.o \
+  build/default/production/menu structure/menu_rom.o \
+  build/default/production/process_all_variables.o \
+  build/default/production/menu structure/report_checksum.o \
+  build/default/production/menu structure/menu_misc.o \
+  build/default/production/menu structure/menu_recov.o \
+  build/default/production/halls.o \
+  build/default/production/menu structure/menu_halls.o \
+  build/default/production/hallbased_phase_control.o \
+  build/default/production/menu structure/menu_temp.o \
+  build/default/production/temp_macros.o \
+  build/default/production/temp_routines.o \
+  build/default/production/menu structure/menu_temp_functions.o \
+  build/default/production/menu structure/calc_rom_variables.o \
+  build/default/production/drive_0_all.o \
+  build/default/production/drive_1_all.o \
+  build/default/production/drive_2_hall.o \
+  build/default/production/drive_2_sensorless.o \
+  build/default/production/drive_3_all.o \
+  build/default/production/drive_3_measurement_functions.o \
+  build/default/production/speed_control.o \
+  build/default/production/correct_drive_selection.o \
+  build/default/production/menu structure/current_sensor_offset_measurement.o \
+  build/default/production/drive_3_hall_measure.o \
+  build/default/production/drive_2to3_sensorless.o \
+  build/default/production/drive_2to3_hall.o \
+  build/default/production/chip_status.o \
+  build/default/production/menu structure/menu_stored_status.o \
+  build/default/production/chip_update.o \
+  build/default/production/current_filtering.o \
+  build/default/production/determine_update.o \
+  build/default/production/calc_wanted_ampli_imag.o \
+  build/default/production/menu structure/mim_calculations.o \
+  build/default/production/throttle_ramp.o \
+  build/default/production/floating_point.o \
+  build/default/production/imp_process_data.o \
+  build/default/production/imp_collect_data.o \
+  build/default/production/imp_collect_data_L.o \
+  build/default/production/imp_collect_data_R.o \
+  build/default/production/sine_i_imag.o \
+  build/default/production/menu structure/menu_KvLR.o \
+  --defsym=__MPLAB_BUILD=1 \
+  -Tp30F4011.gld.00 \
+  --stack=16 \
+  --check-sections \
+  --data-init \
+  --pack-data \
+  --handles \
+  --isr \
+  --no-gc-sections \
+  --fill-upper=0 \
+  --stackguard=16 \
+  --no-force-link \
+  --smart-io \
+  -Map=dist/default/production/30F_powerstart_v2pA1.X.production.map \
+  --report-mem \
+  --memorysummary \
+  dist/default/production/memoryfile.xml \
+  -start-group \
+  --library=pic30-coff \
+  --library=m-coff \
+  --library=c-coff \
+  -end-group \
+
+
+Optional library libp30F4011.a not found
+Archive member included because of file (symbol)
+
+/opt/microchip/xc16/v1.26/bin/bin/../../lib/libpic30-coff.a(crt0_standard.o)
+                              (_resetPRI)
+/opt/microchip/xc16/v1.26/bin/bin/../../lib/libpic30-coff.a(data_init_standard.o)
+                              /opt/microchip/xc16/v1.26/bin/bin/../../lib/libpic30-coff.a(crt0_standard.o) (_data_init_standard)
+
+
+Selected CodeGuard Options:
+  FGS:GWRP:GWRP_OFF
+  FGS:GCP:CODE_PROT_ON
+
+CodeGuard FLASH Memory:
+  boot    (none)
+  secure  (none)
+  general 0x100 to 0x7ffe
+
+CodeGuard RAM Memory:
+  general 0x800 to 0xfff
+  secure  (none)
+  boot    (none)
+
+CodeGuard EEPROM Memory:
+  general 0x7ffc00 to 0x7fffff
+  secure  (none)
+  boot    (none)
+
+
+xc16-ld 1.26 (A)
+
+Program Memory  [Origin = 0x100, Length = 0x7f00]
+
+section                    address   length (PC units)   length (bytes) (dec)
+-------                    -------   -----------------   --------------------
+.text                        0x100                0x70            0xa8  (168)
+.text                        0x170               0x290           0x3d8  (984)
+.text                        0x400              0x3e82          0x5dc3  (24003)
+.text                       0x4282               0x886           0xcc9  (3273)
+menu structure/main_menu.s.scn1    0x4b08               0x1f2           0x2eb  (747)
+.text                       0x4cfa              0x2d82          0x4443  (17475)
+can_motor.s.scn1            0x7a7c                0x64            0x96  (150)
+.text                       0x7ae0               0x178           0x234  (564)
+.dinit                      0x7c58                0x32            0x4b  (75)
+.text                       0x7c8a                0xf6           0x171  (369)
+reset_vector.s.scn1         0x7d80                0x12            0x1b  (27)
+.text                       0x7d92                 0xa             0xf  (15)
+chip_update.s.scn1          0x7e00               0x1fc           0x2fa  (762)
+
+                 Total program memory used (bytes):         0xbde4  (48612) 99%
+
+
+Ivt Memory  [Origin = 0x4, Length = 0x7c]
+
+section                    address   length (PC units)   length (bytes) (dec)
+-------                    -------   -----------------   --------------------
+.ivt._C1Interrupt             0x4a                 0x2             0x3  (3)
+
+
+Data Memory  [Origin = 0x800, Length = 0x800]
+
+section                    address      alignment gaps    total length  (dec)
+-------                    -------      --------------    -------------------
+global_variables.s.scn1      0x800                   0           0x200  (512)
+global_variables.s.scn2      0xa00                   0           0x47e  (1150)
+.bss                         0xe7e                   0            0x8e  (142)
+throttle_ramp.s.scn1         0xf0c                   0             0x4  (4)
+.bss                         0xf10                   0             0x2  (2)
+
+                 Total data memory used (bytes):          0x712  (1810) 88%
+
+
+Dynamic Memory Usage
+
+region                     address                      maximum length  (dec)
+------                     -------                      ---------------------
+heap                             0                                   0  (0)
+stack                        0xf12                                0xee  (238)
+
+                 Maximum dynamic memory (bytes):           0xee  (238)
+
+
+External Symbols in Data Memory (by address):
+
+                    0x0800                  data_array_sin
+                    0x0a00                  phi_motor
+                    0x0a04                  phi_motor_magbased
+                    0x0a08                  phi_int
+                    0x0a0c                  phi_prop
+                    0x0a10                  phi_int_max_erpm
+                    0x0a14                  max_erpm_rampdown
+                    0x0a18                  phi_int_max_erpm_shutdown
+                    0x0a1a                  phi_int_2to3
+                    0x0a1c                  phi_int_3to2
+                    0x0a1e                  phi_int_direction_change
+                    0x0a20                  phi_int_start_regen
+                    0x0a22                  regen_rampup
+                    0x0a24                  phi_int_hall_measure
+                    0x0a26                  ampli_real
+                    0x0a2a                  ampli_imag
+                    0x0a2e                  ampli_prop
+                    0x0a30                  ampli_imag_prop
+                    0x0a32                  ampli_fw
+                    0x0a34                  i_force_regen
+                    0x0a36                  i_error_max_fixed
+                    0x0a38                  i_error_max_prop
+                    0x0a3a                  wir_thr
+                    0x0a3c                  wanted_i_real
+                    0x0a3e                  wanted_i_imag
+                    0x0a40                  phi_motor_prev
+                    0x0a42                  adc_current_offset
+                    0x0a48                  adc_current_offset_lsbs
+                    0x0a4e                  adc_current_prev
+                    0x0a54                  adc_current_polarity
+                    0x0a56                  pwm_period
+                    0x0a58                  pwm_period_rec
+                    0x0a5a                  pwm_deadtime
+                    0x0a5c                  main_loop_count
+                    0x0a5e                  counter
+                    0x0a62                  cycles_2to3
+                    0x0a64                  cycles_try_recov
+                    0x0a66                  monitoring_value
+                    0x0a68                  monitoring_count
+                    0x0a6a                  tx_var_address
+                    0x0a6c                  flags1
+                    0x0a6e                  flags2
+                    0x0a70                  flags_rom
+                    0x0a72                  flags_rom2
+                    0x0a74                  flags_CAN
+                    0x0a76                  str_buf
+                    0x0abc                  filter_I
+                    0x0ac0                  filter_Q
+                    0x0ac4                  filter_I_error
+                    0x0ac8                  filter_spd
+                    0x0acc                  filter_inv_vbat
+                    0x0ad0                  inv_vbat0
+                    0x0ad2                  filter_w8
+                    0x0ad6                  filter_w9
+                    0x0ada                  filter_wir
+                    0x0ade                  filter_hallX
+                    0x0afe                  filter_hallY
+                    0x0b1e                  filter_general_coeff
+                    0x0b20                  supply_voltage
+                    0x0b22                  battery_voltage
+                    0x0b24                  vbat0
+                    0x0b26                  throttle_raw1
+                    0x0b28                  throttle_raw2
+                    0x0b2a                  throttle
+                    0x0b2c                  thr_coeff_1
+                    0x0b32                  thr_coeff_2
+                    0x0b38                  thr1_offset
+                    0x0b3a                  thr1_range
+                    0x0b3c                  thr2_offset
+                    0x0b3e                  thr2_range
+                    0x0b40                  i_max_phase
+                    0x0b42                  i_max_bat_motoruse
+                    0x0b44                  i_max_bat_regenuse
+                    0x0b46                  dr0_counter
+                    0x0b48                  dr0_XX_msec
+                    0x0b4a                  dr0_pulse_duration
+                    0x0b4c                  motor_standstill_voltage
+                    0x0b4e                  can_txsid
+                    0x0b50                  can_rxsid
+                    0x0b52                  can_cfg1
+                    0x0b54                  can_cfg2
+                    0x0b56                  plic_3
+                    0x0b6a                  plic_2
+                    0x0b7e                  plic_1
+                    0x0b92                  alic_3
+                    0x0b9e                  alic_1
+                    0x0baa                  hall_array
+                    0x0bba                  imag_impedance
+                    0x0bbe                  imag_impedance_rom
+                    0x0bc2                  real_impedance
+                    0x0bc6                  real_impedance_rom
+                    0x0bca                  Z_ratio
+                    0x0bcc                  transimpedance
+                    0x0bce                  phi_int_for_impedance_measurement
+                    0x0bd0                  i_inductor_measurement
+                    0x0bd2                  class_d_remainder
+                    0x0bd8                  fil1ord_i_foc
+                    0x0bda                  fil2ord_i_error
+                    0x0bdc                  fil2ord_dr2_motor_speed
+                    0x0bde                  filt_spd_ctrl
+                    0x0be4                  filt_spd_ctrl_ffcoef
+                    0x0be6                  phi_wiggle
+                    0x0be8                  phi_int_wiggle
+                    0x0bea                  ampli_wiggle
+                    0x0bec                  i_min_recov
+                    0x0bee                  fil2ord_percentage
+                    0x0bf0                  fil2ord_speed_recovery
+                    0x0bf2                  pulse_perc_to_reach
+                    0x0bf4                  over_i_total_prop
+                    0x0bf6                  over_i_total_fixed
+                    0x0bf8                  fil2ord_i_meas
+                    0x0bfa                  temp_readout
+                    0x0bfc                  temp_stack
+                    0x0c00                  temp_data
+                    0x0c10                  temp_sens_now
+                    0x0c12                  temp_crc
+                    0x0c14                  temp_counter
+                    0x0c16                  temp_red_i_max_phase
+                    0x0c18                  temp_data_rxed
+                    0x0c1a                  temp_ids
+                    0x0c5a                  number_temp_sensors
+                    0x0c5c                  temp_limit
+                    0x0c6c                  temp_current_red
+                    0x0c7c                  max_fieldweak_ratio
+                    0x0c7e                  fieldweak
+                    0x0c80                  fwlic
+                    0x0c82                  phi_hf_offset
+                    0x0c84                  phi_hf_motor
+                    0x0c86                  ampli_hf_motor
+                    0x0c88                  wanted_phi_int
+                    0x0c8a                  count_ldm
+                    0x0c8e                  count_tot
+                    0x0c92                  stored_status
+                    0x0d22                  pll_bw
+                    0x0d24                  pll_damp
+                    0x0d26                  pll_coefs
+                    0x0d2a                  pll_phi
+                    0x0d2e                  pll_int
+                    0x0d32                  pred_i_real
+                    0x0d36                  pred_i_imag
+                    0x0d3a                  motor_filt_coeff
+                    0x0d3c                  phase_comp_coeff
+                    0x0d3e                  phi_step
+                    0x0d40                  phi_step_int
+                    0x0d42                  phi_step_max
+                    0x0d44                  ampli_lower_limit
+                    0x0d46                  ampli_upper_limit
+                    0x0d48                  ampli_rampdown
+                    0x0d4a                  filter_vbat
+                    0x0d4e                  vbat_filt_coeff
+                    0x0d50                  volt_scale
+                    0x0d52                  hvc_cutoff
+                    0x0d54                  hvc_start
+                    0x0d56                  hvc_ramp
+                    0x0d58                  lvc_cutoff
+                    0x0d5a                  lvc_start
+                    0x0d5c                  lvc_ramp
+                    0x0d5e                  max_accel
+                    0x0d62                  accel_ramp
+                    0x0d64                  filter_accel
+                    0x0d68                  accel_filt_coef
+                    0x0d6a                  phi_int_prev
+                    0x0d6e                  phi_offset
+                    0x0d70                  imp_collect_address
+                    0x0d72                  imp_process_address
+                    0x0d74                  regA
+                    0x0d78                  regB
+                    0x0d7c                  data_collected
+                    0x0da6                  data_collected_rom
+                    0x0dd0                  data_for_imp
+                    0x0dec                  data_variance_R
+                    0x0dfc                  data_variance_R_new
+                    0x0e0c                  data_variance_L
+                    0x0e1c                  data_variance_L_new
+                    0x0e2c                  data_collect_countdown_R
+                    0x0e2e                  data_collect_countdown_L
+                    0x0e30                  data_collect_countdown_R_rom
+                    0x0e32                  data_collect_countdown_L_rom
+                    0x0e34                  data_filt_exponent
+                    0x0e36                  data_current_limit_R
+                    0x0e38                  data_current_limit_L
+                    0x0e3a                  data_speed_limit
+                    0x0e3c                  Kv
+                    0x0e40                  Kv_rom
+                    0x0e44                  meas_L
+                    0x0e46                  meas_R
+                    0x0e48                  Va_raw
+                    0x0e4a                  sine_i_imag
+                    0x0e4c                  ampl_sine_iimag
+                    0x0e50                  phi_sine_iimag
+                    0x0e52                  phiint_sine_iimag
+                    0x0e54                  hall_offset
+                    0x0e58                  hall_stat
+                    0x0e6c                  menus_completed
+                    0x0e6e                  i_filter_offset
+                    0x0e70                  post_dr1_ramp
+                    0x0e74                  post_dr1_incr
+                    0x0e78                  post_dr1_time
+                    0x0e7a                  dummy1
+                    0x0e7c                  dummy2
+                    0x0e7e                  stackpointer
+                    0x0ebe                  w
+                    0x0ec2                  Va
+                    0x0ec6                  Ia
+                    0x0eca                  Ib
+                    0x0ed4                  reg1
+                    0x0ed8                  reg2
+
+External Symbols in Data Memory (by name):
+
+                    0x0ec6                  Ia
+                    0x0eca                  Ib
+                    0x0e3c                  Kv
+                    0x0e40                  Kv_rom
+                    0x0ec2                  Va
+                    0x0e48                  Va_raw
+                    0x0bca                  Z_ratio
+                    0x0d68                  accel_filt_coef
+                    0x0d62                  accel_ramp
+                    0x0a42                  adc_current_offset
+                    0x0a48                  adc_current_offset_lsbs
+                    0x0a54                  adc_current_polarity
+                    0x0a4e                  adc_current_prev
+                    0x0b9e                  alic_1
+                    0x0b92                  alic_3
+                    0x0e4c                  ampl_sine_iimag
+                    0x0a32                  ampli_fw
+                    0x0c86                  ampli_hf_motor
+                    0x0a2a                  ampli_imag
+                    0x0a30                  ampli_imag_prop
+                    0x0d44                  ampli_lower_limit
+                    0x0a2e                  ampli_prop
+                    0x0d48                  ampli_rampdown
+                    0x0a26                  ampli_real
+                    0x0d46                  ampli_upper_limit
+                    0x0bea                  ampli_wiggle
+                    0x0b22                  battery_voltage
+                    0x0b52                  can_cfg1
+                    0x0b54                  can_cfg2
+                    0x0b50                  can_rxsid
+                    0x0b4e                  can_txsid
+                    0x0bd2                  class_d_remainder
+                    0x0c8a                  count_ldm
+                    0x0c8e                  count_tot
+                    0x0a5e                  counter
+                    0x0a62                  cycles_2to3
+                    0x0a64                  cycles_try_recov
+                    0x0800                  data_array_sin
+                    0x0e2e                  data_collect_countdown_L
+                    0x0e32                  data_collect_countdown_L_rom
+                    0x0e2c                  data_collect_countdown_R
+                    0x0e30                  data_collect_countdown_R_rom
+                    0x0d7c                  data_collected
+                    0x0da6                  data_collected_rom
+                    0x0e38                  data_current_limit_L
+                    0x0e36                  data_current_limit_R
+                    0x0e34                  data_filt_exponent
+                    0x0dd0                  data_for_imp
+                    0x0e3a                  data_speed_limit
+                    0x0e0c                  data_variance_L
+                    0x0e1c                  data_variance_L_new
+                    0x0dec                  data_variance_R
+                    0x0dfc                  data_variance_R_new
+                    0x0b48                  dr0_XX_msec
+                    0x0b46                  dr0_counter
+                    0x0b4a                  dr0_pulse_duration
+                    0x0e7a                  dummy1
+                    0x0e7c                  dummy2
+                    0x0c7e                  fieldweak
+                    0x0bd8                  fil1ord_i_foc
+                    0x0bdc                  fil2ord_dr2_motor_speed
+                    0x0bda                  fil2ord_i_error
+                    0x0bf8                  fil2ord_i_meas
+                    0x0bee                  fil2ord_percentage
+                    0x0bf0                  fil2ord_speed_recovery
+                    0x0bde                  filt_spd_ctrl
+                    0x0be4                  filt_spd_ctrl_ffcoef
+                    0x0abc                  filter_I
+                    0x0ac4                  filter_I_error
+                    0x0ac0                  filter_Q
+                    0x0d64                  filter_accel
+                    0x0b1e                  filter_general_coeff
+                    0x0ade                  filter_hallX
+                    0x0afe                  filter_hallY
+                    0x0acc                  filter_inv_vbat
+                    0x0ac8                  filter_spd
+                    0x0d4a                  filter_vbat
+                    0x0ad2                  filter_w8
+                    0x0ad6                  filter_w9
+                    0x0ada                  filter_wir
+                    0x0a6c                  flags1
+                    0x0a6e                  flags2
+                    0x0a74                  flags_CAN
+                    0x0a70                  flags_rom
+                    0x0a72                  flags_rom2
+                    0x0c80                  fwlic
+                    0x0baa                  hall_array
+                    0x0e54                  hall_offset
+                    0x0e58                  hall_stat
+                    0x0d52                  hvc_cutoff
+                    0x0d56                  hvc_ramp
+                    0x0d54                  hvc_start
+                    0x0a36                  i_error_max_fixed
+                    0x0a38                  i_error_max_prop
+                    0x0e6e                  i_filter_offset
+                    0x0a34                  i_force_regen
+                    0x0bd0                  i_inductor_measurement
+                    0x0b42                  i_max_bat_motoruse
+                    0x0b44                  i_max_bat_regenuse
+                    0x0b40                  i_max_phase
+                    0x0bec                  i_min_recov
+                    0x0bba                  imag_impedance
+                    0x0bbe                  imag_impedance_rom
+                    0x0d70                  imp_collect_address
+                    0x0d72                  imp_process_address
+                    0x0ad0                  inv_vbat0
+                    0x0d58                  lvc_cutoff
+                    0x0d5c                  lvc_ramp
+                    0x0d5a                  lvc_start
+                    0x0a5c                  main_loop_count
+                    0x0d5e                  max_accel
+                    0x0a14                  max_erpm_rampdown
+                    0x0c7c                  max_fieldweak_ratio
+                    0x0e44                  meas_L
+                    0x0e46                  meas_R
+                    0x0e6c                  menus_completed
+                    0x0a68                  monitoring_count
+                    0x0a66                  monitoring_value
+                    0x0d3a                  motor_filt_coeff
+                    0x0b4c                  motor_standstill_voltage
+                    0x0c5a                  number_temp_sensors
+                    0x0bf6                  over_i_total_fixed
+                    0x0bf4                  over_i_total_prop
+                    0x0d3c                  phase_comp_coeff
+                    0x0c84                  phi_hf_motor
+                    0x0c82                  phi_hf_offset
+                    0x0a08                  phi_int
+                    0x0a1a                  phi_int_2to3
+                    0x0a1c                  phi_int_3to2
+                    0x0a1e                  phi_int_direction_change
+                    0x0bce                  phi_int_for_impedance_measurement
+                    0x0a24                  phi_int_hall_measure
+                    0x0a10                  phi_int_max_erpm
+                    0x0a18                  phi_int_max_erpm_shutdown
+                    0x0d6a                  phi_int_prev
+                    0x0a20                  phi_int_start_regen
+                    0x0be8                  phi_int_wiggle
+                    0x0a00                  phi_motor
+                    0x0a04                  phi_motor_magbased
+                    0x0a40                  phi_motor_prev
+                    0x0d6e                  phi_offset
+                    0x0a0c                  phi_prop
+                    0x0e50                  phi_sine_iimag
+                    0x0d3e                  phi_step
+                    0x0d40                  phi_step_int
+                    0x0d42                  phi_step_max
+                    0x0be6                  phi_wiggle
+                    0x0e52                  phiint_sine_iimag
+                    0x0b7e                  plic_1
+                    0x0b6a                  plic_2
+                    0x0b56                  plic_3
+                    0x0d22                  pll_bw
+                    0x0d26                  pll_coefs
+                    0x0d24                  pll_damp
+                    0x0d2e                  pll_int
+                    0x0d2a                  pll_phi
+                    0x0e74                  post_dr1_incr
+                    0x0e70                  post_dr1_ramp
+                    0x0e78                  post_dr1_time
+                    0x0d36                  pred_i_imag
+                    0x0d32                  pred_i_real
+                    0x0bf2                  pulse_perc_to_reach
+                    0x0a5a                  pwm_deadtime
+                    0x0a56                  pwm_period
+                    0x0a58                  pwm_period_rec
+                    0x0bc2                  real_impedance
+                    0x0bc6                  real_impedance_rom
+                    0x0ed4                  reg1
+                    0x0ed8                  reg2
+                    0x0d74                  regA
+                    0x0d78                  regB
+                    0x0a22                  regen_rampup
+                    0x0e4a                  sine_i_imag
+                    0x0e7e                  stackpointer
+                    0x0c92                  stored_status
+                    0x0a76                  str_buf
+                    0x0b20                  supply_voltage
+                    0x0c14                  temp_counter
+                    0x0c12                  temp_crc
+                    0x0c6c                  temp_current_red
+                    0x0c00                  temp_data
+                    0x0c18                  temp_data_rxed
+                    0x0c1a                  temp_ids
+                    0x0c5c                  temp_limit
+                    0x0bfa                  temp_readout
+                    0x0c16                  temp_red_i_max_phase
+                    0x0c10                  temp_sens_now
+                    0x0bfc                  temp_stack
+                    0x0b38                  thr1_offset
+                    0x0b3a                  thr1_range
+                    0x0b3c                  thr2_offset
+                    0x0b3e                  thr2_range
+                    0x0b2c                  thr_coeff_1
+                    0x0b32                  thr_coeff_2
+                    0x0b2a                  throttle
+                    0x0b26                  throttle_raw1
+                    0x0b28                  throttle_raw2
+                    0x0bcc                  transimpedance
+                    0x0a6a                  tx_var_address
+                    0x0b24                  vbat0
+                    0x0d4e                  vbat_filt_coeff
+                    0x0d50                  volt_scale
+                    0x0ebe                  w
+                    0x0a3e                  wanted_i_imag
+                    0x0a3c                  wanted_i_real
+                    0x0c88                  wanted_phi_int
+                    0x0a3a                  wir_thr
+
+External Symbols in Program Memory (by address):
+
+                  0x000100                  __data_init
+                  0x000100                  __data_init_standard
+                  0x00016c                  __DefaultInterrupt
+                  0x000170                  process_for_R
+                  0x000400                  restore_from_progmem
+                  0x00040c                  store_in_progmem
+                  0x000418                  restore_from_ascii
+                  0x00042a                  store_in_ascii
+                  0x00053c                  online_store_in_progmem
+                  0x000568                  erase_settings
+                  0x000800                  setup_rom
+                  0x000c00                  menu_halls
+                  0x0011ca                  menu_recov
+                  0x00175a                  menu_loop_coeffs
+                  0x001cac                  menu_currents
+                  0x001f98                  display_current
+                  0x001fc6                  current_to_lsb
+                  0x0021c8                  temperature_readings
+                  0x002244                  temp_read_ids
+                  0x0024b2                  print_sensor_ids
+                  0x002550                  print_temp_limits
+                  0x0025e6                  enter_temp_limits
+                  0x002680                  store_status
+                  0x00272e                  print_status
+                  0x002b28                  menu_erpms
+                  0x002e8c                  print_kerpm
+                  0x002eb8                  input_kerpm
+                  0x002fc0                  menu_throttle
+                  0x0033cc                  menu_pwm
+                  0x003710                  menu_filters
+                  0x003a32                  menu_misc
+                  0x003d0a                  menu_KvLR
+                  0x003fe0                  temp_open
+                  0x003fea                  temp_read
+                  0x004282                  process_all_variables
+                  0x0044d6                  menu_battery
+                  0x004708                  reset_process_imp_data
+                  0x004712                  imp_process_data
+                  0x004916                  throttle_read
+                  0x0049a4                  throttle_rawx_to_wanted_i_real
+                  0x004af4                  raw_to_throttle
+                  0x004cfa                  menu_foc
+                  0x004eaa                  process_for_L
+                  0x005058                  print_readable_L
+                  0x0050aa                  print_readable_R
+                  0x005116                  input_L
+                  0x005192                  input_R
+                  0x0051fc                  determine_update_direction
+                  0x005294                  determine_update_direction_dr2hl
+                  0x0052f0                  determine_update_direction_dr2sl
+                  0x005350                  determine_update_direction_dr1
+                  0x00539e                  initialise_drive_2to3_hall
+                  0x005494                  phase_step_dr23hl
+                  0x00552c                  to_erpm
+                  0x0055d8                  measure_halls
+                  0x0056ac                  reset_collect_imp_data
+                  0x0056c0                  store_imp_data
+                  0x0056ea                  restore_imp_data
+                  0x005718                  imp_collect_data
+                  0x0057a6                  try_R
+                  0x0057b4                  filter_collected
+                  0x00582c                  init_232
+                  0x00583a                  tx_ram_str_232
+                  0x00584e                  tx_str_232
+                  0x005884                  tx_char_232
+                  0x00588c                  tx_word_232
+                  0x0058a8                  clr_scr_232
+                  0x0058bc                  rx_str_232
+                  0x005924                  rx_char_232
+                  0x00592e                  rx_hex_232
+                  0x005980                  rx_endchar_232
+                  0x00598a                  smap_any_key_to_continue
+                  0x0059c6                  get_number
+                  0x005a02                  get_choise
+                  0x005a24                  get_signed_decimal_number
+                  0x005ade                  initialise
+                  0x005b5a                  reset_filters
+                  0x005b9a                  clear_variables
+                  0x005c24                  main_menu
+                  0x005d66                  chip_version
+                  0x005d6a                  write_motor_sinus
+                  0x005eaa                  throttle_tryout
+                  0x005f30                  mthr_enter_poly_coeff
+                  0x005f64                  mthr_print_voltage
+                  0x005f8c                  menu_thr_print_number
+                  0x005fe2                  menu_can
+                  0x006118                  menu_rom
+                  0x00624c                  initialise_drive_2_hall
+                  0x00637c                  fill_pwm_and_sin_arrays
+                  0x0064a6                  menu_sensors
+                  0x0065ce                  current_control
+                  0x00660e                  fieldweakening
+                  0x0066b4                  current_control_1
+                  0x0066f0                  initialise_drive_1_all
+                  0x00680e                  ADC_open
+                  0x006848                  ADC_current
+                  0x006864                  ADC_voltage
+                  0x00687c                  ADC_read_voltage
+                  0x006894                  ADC_read_current
+                  0x0068c8                  ADC_online_filter_offset
+                  0x00690a                  ADC_find_max
+                  0x006922                  menu_stored_status
+                  0x006a08                  word_to_hex_str
+                  0x006a40                  word_to_Q15_str
+                  0x006a56                  word_to_01_str
+                  0x006a8e                  word_to_udec_str
+                  0x006ad6                  word_to_sdec_str
+                  0x006aea                  menu_temp
+                  0x006bcc                  initialise_drive_2_sensorless
+                  0x006cac                  fp_oneover
+                  0x006cbe                  fp_mult
+                  0x006cd4                  fp_add
+                  0x006d06                  fp_sqrt
+                  0x006d4c                  fp_print
+                  0x006d8a                  throttle_ramp
+                  0x006e66                  pre_update
+                  0x006f40                  initialise_drive_2to3_sensorless
+                  0x007018                  motor_impedance_measurement
+                  0x0070ee                  initialise_drive_0_all
+                  0x0071c2                  safety
+                  0x007204                  safety_dr2
+                  0x00726c                  diff_norm_2
+                  0x00727c                  sqrt_w8_w9
+                  0x007294                  calc_rom_variables
+                  0x00729e                  calc_ram_variables
+                  0x0072b8                  calc_rom_variables_online
+                  0x007366                  hall_read_and_pll
+                  0x0073ac                  hall_measure_phase
+                  0x0073e0                  pll_error_check
+                  0x00742c                  initialise_drive_3_all
+                  0x0074f0                  current_sensor_offset_measurement
+                  0x0075b4                  hall_control_imag
+                  0x0075f0                  calc_ampli_imag
+                  0x007676                  calc_impedance_based_coeffs
+                  0x0076c4                  reverse_determine_imag_impedance
+                  0x007702                  reverse_determine_real_impedance
+                  0x007730                  monitoring
+                  0x0077d8                  report_checksum
+                  0x007880                  angle_amplitude_fast
+                  0x0078ba                  angle_amplitude_accurate
+                  0x0078e0                  initialise_angle_amplitude_accurate
+                  0x007924                  halls_open
+                  0x00792c                  update_hall_positions
+                  0x007966                  build_hall_array
+                  0x00799e                  speed_control
+                  0x007a0e                  CAN_open_RX
+                  0x007a52                  CAN_open_TX
+                  0x007a7c                  __C1Interrupt
+                  0x007ac2                  CAN_tx_throttle
+                  0x007ae0                  initialise_sine_walk
+                  0x007af2                  update_sine_i_imag
+                  0x007af6                  reduce_sine_i_imag
+                  0x007b2a                  current_filtering
+                  0x007b6e                  backemf_phase_control
+                  0x007bac                  LEDs_open
+                  0x007bbe                  LED_menu_error
+                  0x007be8                  PWM_open
+                  0x007c0e                  PWM_continuous
+                  0x007c18                  PWM_discontinuous
+                  0x007c22                  correct_drive_2
+                  0x007c36                  correct_drive_2to3
+                  0x007c4a                  correct_drive_3
+                  0x007c8a                  timers_open
+                  0x007cba                  initialise_drive_3_hall_measure
+                  0x007ce8                  init_interrupts
+                  0x007d10                  throttle_open
+                  0x007d38                  demod
+                  0x007d5e                  inverse_vbat
+                  0x007d80                  __reset
+                  0x007d92                  main_motor
+                  0x007e00                  update_chip
+                  0xf8000a                  __FGS.sec
+
+External Symbols in Program Memory (by name):
+
+                  0x006848                  ADC_current
+                  0x00690a                  ADC_find_max
+                  0x0068c8                  ADC_online_filter_offset
+                  0x00680e                  ADC_open
+                  0x006894                  ADC_read_current
+                  0x00687c                  ADC_read_voltage
+                  0x006864                  ADC_voltage
+                  0x007a0e                  CAN_open_RX
+                  0x007a52                  CAN_open_TX
+                  0x007ac2                  CAN_tx_throttle
+                  0x007bbe                  LED_menu_error
+                  0x007bac                  LEDs_open
+                  0x007c0e                  PWM_continuous
+                  0x007c18                  PWM_discontinuous
+                  0x007be8                  PWM_open
+                  0x007a7c                  __C1Interrupt
+                  0x00016c                  __DefaultInterrupt
+                  0xf8000a                  __FGS.sec
+                  0x000100                  __data_init
+                  0x000100                  __data_init_standard
+                  0x007d80                  __reset
+                  0x0078ba                  angle_amplitude_accurate
+                  0x007880                  angle_amplitude_fast
+                  0x007b6e                  backemf_phase_control
+                  0x007966                  build_hall_array
+                  0x0075f0                  calc_ampli_imag
+                  0x007676                  calc_impedance_based_coeffs
+                  0x00729e                  calc_ram_variables
+                  0x007294                  calc_rom_variables
+                  0x0072b8                  calc_rom_variables_online
+                  0x005d66                  chip_version
+                  0x005b9a                  clear_variables
+                  0x0058a8                  clr_scr_232
+                  0x007c22                  correct_drive_2
+                  0x007c36                  correct_drive_2to3
+                  0x007c4a                  correct_drive_3
+                  0x0065ce                  current_control
+                  0x0066b4                  current_control_1
+                  0x007b2a                  current_filtering
+                  0x0074f0                  current_sensor_offset_measurement
+                  0x001fc6                  current_to_lsb
+                  0x007d38                  demod
+                  0x0051fc                  determine_update_direction
+                  0x005350                  determine_update_direction_dr1
+                  0x005294                  determine_update_direction_dr2hl
+                  0x0052f0                  determine_update_direction_dr2sl
+                  0x00726c                  diff_norm_2
+                  0x001f98                  display_current
+                  0x0025e6                  enter_temp_limits
+                  0x000568                  erase_settings
+                  0x00660e                  fieldweakening
+                  0x00637c                  fill_pwm_and_sin_arrays
+                  0x0057b4                  filter_collected
+                  0x006cd4                  fp_add
+                  0x006cbe                  fp_mult
+                  0x006cac                  fp_oneover
+                  0x006d4c                  fp_print
+                  0x006d06                  fp_sqrt
+                  0x005a02                  get_choise
+                  0x0059c6                  get_number
+                  0x005a24                  get_signed_decimal_number
+                  0x0075b4                  hall_control_imag
+                  0x0073ac                  hall_measure_phase
+                  0x007366                  hall_read_and_pll
+                  0x007924                  halls_open
+                  0x005718                  imp_collect_data
+                  0x004712                  imp_process_data
+                  0x00582c                  init_232
+                  0x007ce8                  init_interrupts
+                  0x005ade                  initialise
+                  0x0078e0                  initialise_angle_amplitude_accurate
+                  0x0070ee                  initialise_drive_0_all
+                  0x0066f0                  initialise_drive_1_all
+                  0x00624c                  initialise_drive_2_hall
+                  0x006bcc                  initialise_drive_2_sensorless
+                  0x00539e                  initialise_drive_2to3_hall
+                  0x006f40                  initialise_drive_2to3_sensorless
+                  0x00742c                  initialise_drive_3_all
+                  0x007cba                  initialise_drive_3_hall_measure
+                  0x007ae0                  initialise_sine_walk
+                  0x005116                  input_L
+                  0x005192                  input_R
+                  0x002eb8                  input_kerpm
+                  0x007d5e                  inverse_vbat
+                  0x005c24                  main_menu
+                  0x007d92                  main_motor
+                  0x0055d8                  measure_halls
+                  0x003d0a                  menu_KvLR
+                  0x0044d6                  menu_battery
+                  0x005fe2                  menu_can
+                  0x001cac                  menu_currents
+                  0x002b28                  menu_erpms
+                  0x003710                  menu_filters
+                  0x004cfa                  menu_foc
+                  0x000c00                  menu_halls
+                  0x00175a                  menu_loop_coeffs
+                  0x003a32                  menu_misc
+                  0x0033cc                  menu_pwm
+                  0x0011ca                  menu_recov
+                  0x006118                  menu_rom
+                  0x0064a6                  menu_sensors
+                  0x006922                  menu_stored_status
+                  0x006aea                  menu_temp
+                  0x005f8c                  menu_thr_print_number
+                  0x002fc0                  menu_throttle
+                  0x007730                  monitoring
+                  0x007018                  motor_impedance_measurement
+                  0x005f30                  mthr_enter_poly_coeff
+                  0x005f64                  mthr_print_voltage
+                  0x00053c                  online_store_in_progmem
+                  0x005494                  phase_step_dr23hl
+                  0x0073e0                  pll_error_check
+                  0x006e66                  pre_update
+                  0x002e8c                  print_kerpm
+                  0x005058                  print_readable_L
+                  0x0050aa                  print_readable_R
+                  0x0024b2                  print_sensor_ids
+                  0x00272e                  print_status
+                  0x002550                  print_temp_limits
+                  0x004282                  process_all_variables
+                  0x004eaa                  process_for_L
+                  0x000170                  process_for_R
+                  0x004af4                  raw_to_throttle
+                  0x007af6                  reduce_sine_i_imag
+                  0x0077d8                  report_checksum
+                  0x0056ac                  reset_collect_imp_data
+                  0x005b5a                  reset_filters
+                  0x004708                  reset_process_imp_data
+                  0x000418                  restore_from_ascii
+                  0x000400                  restore_from_progmem
+                  0x0056ea                  restore_imp_data
+                  0x0076c4                  reverse_determine_imag_impedance
+                  0x007702                  reverse_determine_real_impedance
+                  0x005924                  rx_char_232
+                  0x005980                  rx_endchar_232
+                  0x00592e                  rx_hex_232
+                  0x0058bc                  rx_str_232
+                  0x0071c2                  safety
+                  0x007204                  safety_dr2
+                  0x000800                  setup_rom
+                  0x00598a                  smap_any_key_to_continue
+                  0x00799e                  speed_control
+                  0x00727c                  sqrt_w8_w9
+                  0x0056c0                  store_imp_data
+                  0x00042a                  store_in_ascii
+                  0x00040c                  store_in_progmem
+                  0x002680                  store_status
+                  0x003fe0                  temp_open
+                  0x003fea                  temp_read
+                  0x002244                  temp_read_ids
+                  0x0021c8                  temperature_readings
+                  0x007d10                  throttle_open
+                  0x006d8a                  throttle_ramp
+                  0x0049a4                  throttle_rawx_to_wanted_i_real
+                  0x004916                  throttle_read
+                  0x005eaa                  throttle_tryout
+                  0x007c8a                  timers_open
+                  0x00552c                  to_erpm
+                  0x0057a6                  try_R
+                  0x005884                  tx_char_232
+                  0x00583a                  tx_ram_str_232
+                  0x00584e                  tx_str_232
+                  0x00588c                  tx_word_232
+                  0x007e00                  update_chip
+                  0x00792c                  update_hall_positions
+                  0x007af2                  update_sine_i_imag
+                  0x006a56                  word_to_01_str
+                  0x006a40                  word_to_Q15_str
+                  0x006a08                  word_to_hex_str
+                  0x006ad6                  word_to_sdec_str
+                  0x006a8e                  word_to_udec_str
+                  0x005d6a                  write_motor_sinus
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+data             0x000800           0x000800           a !xr
+reset            0x000000           0x000004  
+ivt              0x000004           0x00007c  
+_reserved        0x000080           0x000004  
+aivt             0x000084           0x00007c  
+program          0x000100           0x007f00           xr
+eedata           0x7ffc00           0x000400  
+FUID0            0x8005c0           0x000002  
+FUID1            0x8005c2           0x000002  
+FUID2            0x8005c4           0x000002  
+FUID3            0x8005c6           0x000002  
+FOSC             0xf80000           0x000002  
+FWDT             0xf80002           0x000002  
+FBORPOR          0xf80004           0x000002  
+RESERVED1        0xf80006           0x000002  
+RESERVED2        0xf80008           0x000002  
+FGS              0xf8000a           0x000002  
+FICD             0xf8000c           0x000002  
+*default*        0x000000           0xffffffff  
+
+Linker script and memory map
+
+LOAD build/default/production/reset_vector.o
+LOAD build/default/production/init_interrupts.o
+LOAD build/default/production/subrout_str.o
+LOAD build/default/production/subrout_232.o
+LOAD build/default/production/global_variables.o
+LOAD build/default/production/fill_pwm_and_sin_arrays.o
+LOAD build/default/production/motor_sinus.o
+LOAD build/default/production/timers.o
+LOAD build/default/production/PWM.o
+LOAD build/default/production/ADC.o
+LOAD build/default/production/monitoring.o
+LOAD build/default/production/initialise.o
+LOAD build/default/production/demod.o
+LOAD build/default/production/angle_amplitude.o
+LOAD build/default/production/throttle_open.o
+LOAD build/default/production/can_initialise.o
+LOAD build/default/production/throttle_read.o
+LOAD build/default/production/can_motor.o
+LOAD build/default/production/main_motor.o
+LOAD build/default/production/LEDs.o
+LOAD build/default/production/current_control.o
+LOAD build/default/production/backemf_phase_control.o
+LOAD build/default/production/safety.o
+LOAD build/default/production/inverse_vbat.o
+LOAD build/default/production/prog_mem.o
+LOAD build/default/production/menu structure/main_menu.o
+LOAD build/default/production/menu structure/menu_pwm.o
+LOAD build/default/production/menu structure/menu_functions.o
+LOAD build/default/production/menu structure/menu_throttle.o
+LOAD build/default/production/menu structure/menu_throttle_functions.o
+LOAD build/default/production/menu structure/menu_currents.o
+LOAD build/default/production/menu structure/menu_erpms.o
+LOAD build/default/production/menu structure/menu_battery.o
+LOAD build/default/production/menu structure/menu_sensors.o
+LOAD build/default/production/menu structure/menu_foc.o
+LOAD build/default/production/menu structure/convert_to_readable_L_and_R.o
+LOAD build/default/production/menu structure/motor_impedance_measurement.o
+LOAD build/default/production/menu structure/menu_loop_coeffs.o
+LOAD build/default/production/menu structure/menu_filters.o
+LOAD build/default/production/menu structure/menu_can.o
+LOAD build/default/production/menu structure/menu_rom.o
+LOAD build/default/production/process_all_variables.o
+LOAD build/default/production/menu structure/report_checksum.o
+LOAD build/default/production/menu structure/menu_misc.o
+LOAD build/default/production/menu structure/menu_recov.o
+LOAD build/default/production/halls.o
+LOAD build/default/production/menu structure/menu_halls.o
+LOAD build/default/production/hallbased_phase_control.o
+LOAD build/default/production/menu structure/menu_temp.o
+LOAD build/default/production/temp_macros.o
+LOAD build/default/production/temp_routines.o
+LOAD build/default/production/menu structure/menu_temp_functions.o
+LOAD build/default/production/menu structure/calc_rom_variables.o
+LOAD build/default/production/drive_0_all.o
+LOAD build/default/production/drive_1_all.o
+LOAD build/default/production/drive_2_hall.o
+LOAD build/default/production/drive_2_sensorless.o
+LOAD build/default/production/drive_3_all.o
+LOAD build/default/production/drive_3_measurement_functions.o
+LOAD build/default/production/speed_control.o
+LOAD build/default/production/correct_drive_selection.o
+LOAD build/default/production/menu structure/current_sensor_offset_measurement.o
+LOAD build/default/production/drive_3_hall_measure.o
+LOAD build/default/production/drive_2to3_sensorless.o
+LOAD build/default/production/drive_2to3_hall.o
+LOAD build/default/production/chip_status.o
+LOAD build/default/production/menu structure/menu_stored_status.o
+LOAD build/default/production/chip_update.o
+LOAD build/default/production/current_filtering.o
+LOAD build/default/production/determine_update.o
+LOAD build/default/production/calc_wanted_ampli_imag.o
+LOAD build/default/production/menu structure/mim_calculations.o
+LOAD build/default/production/throttle_ramp.o
+LOAD build/default/production/floating_point.o
+LOAD build/default/production/imp_process_data.o
+LOAD build/default/production/imp_collect_data.o
+LOAD build/default/production/imp_collect_data_L.o
+LOAD build/default/production/imp_collect_data_R.o
+LOAD build/default/production/sine_i_imag.o
+LOAD build/default/production/menu structure/menu_KvLR.o
+                    0x0001                  __MPLAB_BUILD = 0x1
+LOAD p30F4011
+LOAD /opt/microchip/xc16/v1.26/bin/bin/../../lib/libfx-coff.a
+                    0x8005c0                  __FUID0 = 0x8005c0
+                    0x8005c2                  __FUID1 = 0x8005c2
+                    0x8005c4                  __FUID2 = 0x8005c4
+                    0x8005c6                  __FUID3 = 0x8005c6
+                    0xf80000                  __FOSC = 0xf80000
+                    0xf80002                  __FWDT = 0xf80002
+                    0xf80004                  __FBORPOR = 0xf80004
+                    0xf80006                  __RESERVED1 = 0xf80006
+                    0xf80008                  __RESERVED2 = 0xf80008
+                    0xf8000a                  __FGS = 0xf8000a
+                    0xf8000c                  __FICD = 0xf8000c
+                    0x0001                  __NO_HANDLES = 0x1
+                    0x0100                  __CODE_BASE = 0x100
+                    0x7f00                  __CODE_LENGTH = 0x7f00
+                    0x0004                  __IVT_BASE = 0x4
+                    0x0084                  __AIVT_BASE = 0x84
+                    0x0800                  __DATA_BASE = 0x800
+                    0x0800                  __DATA_LENGTH = 0x800
+                    0x0c00                  __YDATA_BASE = 0xc00
+
+.reset            0x000000          0x4
+                  0x000000          0x2 SHORT 0x7d80 ABSOLUTE (__reset)
+                  0x000001          0x2 SHORT 0x4
+                  0x000002          0x2 SHORT 0x0 ((ABSOLUTE (__reset) >> 0x10) & 0x7f)
+                  0x000003          0x2 SHORT 0x0
+
+.text             0x000100         0x70
+ *(.init)
+ .init            0x000100         0x6c /opt/microchip/xc16/v1.26/bin/bin/../../lib/libpic30-coff.a(data_init_standard.o)
+                  0x000100                  _data_init
+                  0x000100                  _data_init_standard
+ *(.user_init)
+ *(.handle)
+ *(.isr*)
+ .isr             0x00016c          0x4 default_isr
+                  0x00016c                  _DefaultInterrupt
+ *(.libc)
+ *(.libm)
+ *(.libdsp)
+ *(.lib*)
+
+usercode
+ *(usercode)
+
+__FUID0
+ *(__FUID0.sec*)
+
+__FUID1
+ *(__FUID1.sec*)
+
+__FUID2
+ *(__FUID2.sec*)
+
+__FUID3
+ *(__FUID3.sec*)
+
+__FOSC            0xf80000          0x2
+ *(__FOSC.sec*)
+ __FOSC.sec       0xf80000          0x2 build/default/production/reset_vector.o
+
+__FWDT            0xf80002          0x2
+ *(__FWDT.sec*)
+ __FWDT.sec       0xf80002          0x2 build/default/production/reset_vector.o
+
+__FBORPOR         0xf80004          0x2
+ *(__FBORPOR.sec*)
+ __FBORPOR.sec    0xf80004          0x2 build/default/production/reset_vector.o
+
+__RESERVED1
+ *(__RESERVED1.sec*)
+
+__RESERVED2
+ *(__RESERVED2.sec*)
+
+__FGS             0xf8000a          0x2
+ *(__FGS.sec*)
+ __FGS.sec        0xf8000a          0x2 FGS
+                  0xf8000a                  _FGS.sec
+
+__FICD
+ *(__FICD.sec*)
+
+user_eedata
+ *(user_eedata)
+
+userdata
+ *(userdata)
+
+.comment
+ *(.comment)
+
+.debug_info
+ *(.debug_info)
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_aranges
+ *(.debug_aranges)
+                    0x0000                  WREG0 = 0x0
+                    0x0000                  _WREG0 = 0x0
+                    0x0002                  WREG1 = 0x2
+                    0x0002                  _WREG1 = 0x2
+                    0x0004                  WREG2 = 0x4
+                    0x0004                  _WREG2 = 0x4
+                    0x0006                  WREG3 = 0x6
+                    0x0006                  _WREG3 = 0x6
+                    0x0008                  WREG4 = 0x8
+                    0x0008                  _WREG4 = 0x8
+                    0x000a                  WREG5 = 0xa
+                    0x000a                  _WREG5 = 0xa
+                    0x000c                  WREG6 = 0xc
+                    0x000c                  _WREG6 = 0xc
+                    0x000e                  WREG7 = 0xe
+                    0x000e                  _WREG7 = 0xe
+                    0x0010                  WREG8 = 0x10
+                    0x0010                  _WREG8 = 0x10
+                    0x0012                  WREG9 = 0x12
+                    0x0012                  _WREG9 = 0x12
+                    0x0014                  WREG10 = 0x14
+                    0x0014                  _WREG10 = 0x14
+                    0x0016                  WREG11 = 0x16
+                    0x0016                  _WREG11 = 0x16
+                    0x0018                  WREG12 = 0x18
+                    0x0018                  _WREG12 = 0x18
+                    0x001a                  WREG13 = 0x1a
+                    0x001a                  _WREG13 = 0x1a
+                    0x001c                  WREG14 = 0x1c
+                    0x001c                  _WREG14 = 0x1c
+                    0x001e                  WREG15 = 0x1e
+                    0x001e                  _WREG15 = 0x1e
+                    0x0020                  SPLIM = 0x20
+                    0x0020                  _SPLIM = 0x20
+                    0x0022                  ACCAL = 0x22
+                    0x0022                  _ACCAL = 0x22
+                    0x0024                  ACCAH = 0x24
+                    0x0024                  _ACCAH = 0x24
+                    0x0026                  ACCAU = 0x26
+                    0x0026                  _ACCAU = 0x26
+                    0x0028                  ACCBL = 0x28
+                    0x0028                  _ACCBL = 0x28
+                    0x002a                  ACCBH = 0x2a
+                    0x002a                  _ACCBH = 0x2a
+                    0x002c                  ACCBU = 0x2c
+                    0x002c                  _ACCBU = 0x2c
+                    0x002e                  PCL = 0x2e
+                    0x002e                  _PCL = 0x2e
+                    0x0030                  PCH = 0x30
+                    0x0030                  _PCH = 0x30
+                    0x0032                  TBLPAG = 0x32
+                    0x0032                  _TBLPAG = 0x32
+                    0x0034                  PSVPAG = 0x34
+                    0x0034                  _PSVPAG = 0x34
+                    0x0036                  RCOUNT = 0x36
+                    0x0036                  _RCOUNT = 0x36
+                    0x0038                  DCOUNT = 0x38
+                    0x0038                  _DCOUNT = 0x38
+                    0x003a                  DOSTARTL = 0x3a
+                    0x003a                  _DOSTARTL = 0x3a
+                    0x003c                  DOSTARTH = 0x3c
+                    0x003c                  _DOSTARTH = 0x3c
+                    0x003e                  DOENDL = 0x3e
+                    0x003e                  _DOENDL = 0x3e
+                    0x0040                  DOENDH = 0x40
+                    0x0040                  _DOENDH = 0x40
+                    0x0042                  SR = 0x42
+                    0x0042                  _SR = 0x42
+                    0x0042                  _SRbits = 0x42
+                    0x0044                  CORCON = 0x44
+                    0x0044                  _CORCON = 0x44
+                    0x0044                  _CORCONbits = 0x44
+                    0x0046                  MODCON = 0x46
+                    0x0046                  _MODCON = 0x46
+                    0x0046                  _MODCONbits = 0x46
+                    0x0048                  XMODSRT = 0x48
+                    0x0048                  _XMODSRT = 0x48
+                    0x004a                  XMODEND = 0x4a
+                    0x004a                  _XMODEND = 0x4a
+                    0x004c                  YMODSRT = 0x4c
+                    0x004c                  _YMODSRT = 0x4c
+                    0x004e                  YMODEND = 0x4e
+                    0x004e                  _YMODEND = 0x4e
+                    0x0050                  XBREV = 0x50
+                    0x0050                  _XBREV = 0x50
+                    0x0050                  _XBREVbits = 0x50
+                    0x0052                  DISICNT = 0x52
+                    0x0052                  _DISICNT = 0x52
+                    0x0052                  _DISICNTbits = 0x52
+                    0x0080                  INTCON1 = 0x80
+                    0x0080                  _INTCON1 = 0x80
+                    0x0080                  _INTCON1bits = 0x80
+                    0x0082                  INTCON2 = 0x82
+                    0x0082                  _INTCON2 = 0x82
+                    0x0082                  _INTCON2bits = 0x82
+                    0x0084                  IFS0 = 0x84
+                    0x0084                  _IFS0 = 0x84
+                    0x0084                  _IFS0bits = 0x84
+                    0x0086                  IFS1 = 0x86
+                    0x0086                  _IFS1 = 0x86
+                    0x0086                  _IFS1bits = 0x86
+                    0x0088                  IFS2 = 0x88
+                    0x0088                  _IFS2 = 0x88
+                    0x0088                  _IFS2bits = 0x88
+                    0x008c                  IEC0 = 0x8c
+                    0x008c                  _IEC0 = 0x8c
+                    0x008c                  _IEC0bits = 0x8c
+                    0x008e                  IEC1 = 0x8e
+                    0x008e                  _IEC1 = 0x8e
+                    0x008e                  _IEC1bits = 0x8e
+                    0x0090                  IEC2 = 0x90
+                    0x0090                  _IEC2 = 0x90
+                    0x0090                  _IEC2bits = 0x90
+                    0x0094                  IPC0 = 0x94
+                    0x0094                  _IPC0 = 0x94
+                    0x0094                  _IPC0bits = 0x94
+                    0x0096                  IPC1 = 0x96
+                    0x0096                  _IPC1 = 0x96
+                    0x0096                  _IPC1bits = 0x96
+                    0x0098                  IPC2 = 0x98
+                    0x0098                  _IPC2 = 0x98
+                    0x0098                  _IPC2bits = 0x98
+                    0x009a                  IPC3 = 0x9a
+                    0x009a                  _IPC3 = 0x9a
+                    0x009a                  _IPC3bits = 0x9a
+                    0x009c                  IPC4 = 0x9c
+                    0x009c                  _IPC4 = 0x9c
+                    0x009c                  _IPC4bits = 0x9c
+                    0x009e                  IPC5 = 0x9e
+                    0x009e                  _IPC5 = 0x9e
+                    0x009e                  _IPC5bits = 0x9e
+                    0x00a0                  IPC6 = 0xa0
+                    0x00a0                  _IPC6 = 0xa0
+                    0x00a0                  _IPC6bits = 0xa0
+                    0x00a6                  IPC9 = 0xa6
+                    0x00a6                  _IPC9 = 0xa6
+                    0x00a6                  _IPC9bits = 0xa6
+                    0x00a8                  IPC10 = 0xa8
+                    0x00a8                  _IPC10 = 0xa8
+                    0x00a8                  _IPC10bits = 0xa8
+                    0x00b0                  INTTREG = 0xb0
+                    0x00b0                  _INTTREG = 0xb0
+                    0x00b0                  _INTTREGbits = 0xb0
+                    0x00c0                  CNEN1 = 0xc0
+                    0x00c0                  _CNEN1 = 0xc0
+                    0x00c0                  _CNEN1bits = 0xc0
+                    0x00c2                  CNEN2 = 0xc2
+                    0x00c2                  _CNEN2 = 0xc2
+                    0x00c2                  _CNEN2bits = 0xc2
+                    0x00c4                  CNPU1 = 0xc4
+                    0x00c4                  _CNPU1 = 0xc4
+                    0x00c4                  _CNPU1bits = 0xc4
+                    0x00c6                  CNPU2 = 0xc6
+                    0x00c6                  _CNPU2 = 0xc6
+                    0x00c6                  _CNPU2bits = 0xc6
+                    0x0100                  TMR1 = 0x100
+                    0x0100                  _TMR1 = 0x100
+                    0x0102                  PR1 = 0x102
+                    0x0102                  _PR1 = 0x102
+                    0x0104                  T1CON = 0x104
+                    0x0104                  _T1CON = 0x104
+                    0x0104                  _T1CONbits = 0x104
+                    0x0106                  TMR2 = 0x106
+                    0x0106                  _TMR2 = 0x106
+                    0x0108                  TMR3HLD = 0x108
+                    0x0108                  _TMR3HLD = 0x108
+                    0x010a                  TMR3 = 0x10a
+                    0x010a                  _TMR3 = 0x10a
+                    0x010c                  PR2 = 0x10c
+                    0x010c                  _PR2 = 0x10c
+                    0x010e                  PR3 = 0x10e
+                    0x010e                  _PR3 = 0x10e
+                    0x0110                  T2CON = 0x110
+                    0x0110                  _T2CON = 0x110
+                    0x0110                  _T2CONbits = 0x110
+                    0x0112                  T3CON = 0x112
+                    0x0112                  _T3CON = 0x112
+                    0x0112                  _T3CONbits = 0x112
+                    0x0114                  TMR4 = 0x114
+                    0x0114                  _TMR4 = 0x114
+                    0x0116                  TMR5HLD = 0x116
+                    0x0116                  _TMR5HLD = 0x116
+                    0x0118                  TMR5 = 0x118
+                    0x0118                  _TMR5 = 0x118
+                    0x011a                  PR4 = 0x11a
+                    0x011a                  _PR4 = 0x11a
+                    0x011c                  PR5 = 0x11c
+                    0x011c                  _PR5 = 0x11c
+                    0x011e                  T4CON = 0x11e
+                    0x011e                  _T4CON = 0x11e
+                    0x011e                  _T4CONbits = 0x11e
+                    0x0120                  T5CON = 0x120
+                    0x0120                  _T5CON = 0x120
+                    0x0120                  _T5CONbits = 0x120
+                    0x0122                  QEICON = 0x122
+                    0x0122                  _QEICON = 0x122
+                    0x0122                  _QEICONbits = 0x122
+                    0x0124                  DFLTCON = 0x124
+                    0x0124                  _DFLTCON = 0x124
+                    0x0124                  _DFLTCONbits = 0x124
+                    0x0126                  POSCNT = 0x126
+                    0x0126                  _POSCNT = 0x126
+                    0x0128                  MAXCNT = 0x128
+                    0x0128                  _MAXCNT = 0x128
+                    0x0140                  IC1BUF = 0x140
+                    0x0140                  _IC1BUF = 0x140
+                    0x0142                  IC1CON = 0x142
+                    0x0142                  _IC1CON = 0x142
+                    0x0142                  _IC1CONbits = 0x142
+                    0x0144                  IC2BUF = 0x144
+                    0x0144                  _IC2BUF = 0x144
+                    0x0146                  IC2CON = 0x146
+                    0x0146                  _IC2CON = 0x146
+                    0x0146                  _IC2CONbits = 0x146
+                    0x0158                  IC7BUF = 0x158
+                    0x0158                  _IC7BUF = 0x158
+                    0x015a                  IC7CON = 0x15a
+                    0x015a                  _IC7CON = 0x15a
+                    0x015a                  _IC7CONbits = 0x15a
+                    0x015c                  IC8BUF = 0x15c
+                    0x015c                  _IC8BUF = 0x15c
+                    0x015e                  IC8CON = 0x15e
+                    0x015e                  _IC8CON = 0x15e
+                    0x015e                  _IC8CONbits = 0x15e
+                    0x0180                  OC1RS = 0x180
+                    0x0180                  _OC1RS = 0x180
+                    0x0182                  OC1R = 0x182
+                    0x0182                  _OC1R = 0x182
+                    0x0184                  OC1CON = 0x184
+                    0x0184                  _OC1CON = 0x184
+                    0x0184                  _OC1CONbits = 0x184
+                    0x0186                  OC2RS = 0x186
+                    0x0186                  _OC2RS = 0x186
+                    0x0188                  OC2R = 0x188
+                    0x0188                  _OC2R = 0x188
+                    0x018a                  OC2CON = 0x18a
+                    0x018a                  _OC2CON = 0x18a
+                    0x018a                  _OC2CONbits = 0x18a
+                    0x018c                  OC3RS = 0x18c
+                    0x018c                  _OC3RS = 0x18c
+                    0x018e                  OC3R = 0x18e
+                    0x018e                  _OC3R = 0x18e
+                    0x0190                  OC3CON = 0x190
+                    0x0190                  _OC3CON = 0x190
+                    0x0190                  _OC3CONbits = 0x190
+                    0x0192                  OC4RS = 0x192
+                    0x0192                  _OC4RS = 0x192
+                    0x0194                  OC4R = 0x194
+                    0x0194                  _OC4R = 0x194
+                    0x0196                  OC4CON = 0x196
+                    0x0196                  _OC4CON = 0x196
+                    0x0196                  _OC4CONbits = 0x196
+                    0x01c0                  PTCON = 0x1c0
+                    0x01c0                  _PTCON = 0x1c0
+                    0x01c0                  _PTCONbits = 0x1c0
+                    0x01c2                  PTMR = 0x1c2
+                    0x01c2                  _PTMR = 0x1c2
+                    0x01c2                  _PTMRbits = 0x1c2
+                    0x01c4                  PTPER = 0x1c4
+                    0x01c4                  _PTPER = 0x1c4
+                    0x01c4                  _PTPERbits = 0x1c4
+                    0x01c6                  SEVTCMP = 0x1c6
+                    0x01c6                  _SEVTCMP = 0x1c6
+                    0x01c6                  _SEVTCMPbits = 0x1c6
+                    0x01c8                  PWMCON1 = 0x1c8
+                    0x01c8                  _PWMCON1 = 0x1c8
+                    0x01c8                  _PWMCON1bits = 0x1c8
+                    0x01ca                  PWMCON2 = 0x1ca
+                    0x01ca                  _PWMCON2 = 0x1ca
+                    0x01ca                  _PWMCON2bits = 0x1ca
+                    0x01cc                  DTCON1 = 0x1cc
+                    0x01cc                  _DTCON1 = 0x1cc
+                    0x01cc                  _DTCON1bits = 0x1cc
+                    0x01d0                  FLTACON = 0x1d0
+                    0x01d0                  _FLTACON = 0x1d0
+                    0x01d0                  _FLTACONbits = 0x1d0
+                    0x01d4                  OVDCON = 0x1d4
+                    0x01d4                  _OVDCON = 0x1d4
+                    0x01d4                  _OVDCONbits = 0x1d4
+                    0x01d6                  PDC1 = 0x1d6
+                    0x01d6                  _PDC1 = 0x1d6
+                    0x01d8                  PDC2 = 0x1d8
+                    0x01d8                  _PDC2 = 0x1d8
+                    0x01da                  PDC3 = 0x1da
+                    0x01da                  _PDC3 = 0x1da
+                    0x0200                  I2CRCV = 0x200
+                    0x0200                  _I2CRCV = 0x200
+                    0x0200                  _I2CRCVbits = 0x200
+                    0x0202                  I2CTRN = 0x202
+                    0x0202                  _I2CTRN = 0x202
+                    0x0202                  _I2CTRNbits = 0x202
+                    0x0204                  I2CBRG = 0x204
+                    0x0204                  _I2CBRG = 0x204
+                    0x0204                  _I2CBRGbits = 0x204
+                    0x0206                  I2CCON = 0x206
+                    0x0206                  _I2CCON = 0x206
+                    0x0206                  _I2CCONbits = 0x206
+                    0x0208                  I2CSTAT = 0x208
+                    0x0208                  _I2CSTAT = 0x208
+                    0x0208                  _I2CSTATbits = 0x208
+                    0x020a                  I2CADD = 0x20a
+                    0x020a                  _I2CADD = 0x20a
+                    0x020a                  _I2CADDbits = 0x20a
+                    0x020c                  U1MODE = 0x20c
+                    0x020c                  _U1MODE = 0x20c
+                    0x020c                  _U1MODEbits = 0x20c
+                    0x020e                  U1STA = 0x20e
+                    0x020e                  _U1STA = 0x20e
+                    0x020e                  _U1STAbits = 0x20e
+                    0x0210                  U1TXREG = 0x210
+                    0x0210                  _U1TXREG = 0x210
+                    0x0210                  _U1TXREGbits = 0x210
+                    0x0212                  U1RXREG = 0x212
+                    0x0212                  _U1RXREG = 0x212
+                    0x0212                  _U1RXREGbits = 0x212
+                    0x0214                  U1BRG = 0x214
+                    0x0214                  _U1BRG = 0x214
+                    0x0216                  U2MODE = 0x216
+                    0x0216                  _U2MODE = 0x216
+                    0x0216                  _U2MODEbits = 0x216
+                    0x0218                  U2STA = 0x218
+                    0x0218                  _U2STA = 0x218
+                    0x0218                  _U2STAbits = 0x218
+                    0x021a                  U2TXREG = 0x21a
+                    0x021a                  _U2TXREG = 0x21a
+                    0x021a                  _U2TXREGbits = 0x21a
+                    0x021c                  U2RXREG = 0x21c
+                    0x021c                  _U2RXREG = 0x21c
+                    0x021c                  _U2RXREGbits = 0x21c
+                    0x021e                  U2BRG = 0x21e
+                    0x021e                  _U2BRG = 0x21e
+                    0x0220                  SPI1STAT = 0x220
+                    0x0220                  _SPI1STAT = 0x220
+                    0x0220                  _SPI1STATbits = 0x220
+                    0x0222                  SPI1CON = 0x222
+                    0x0222                  _SPI1CON = 0x222
+                    0x0222                  _SPI1CONbits = 0x222
+                    0x0224                  SPI1BUF = 0x224
+                    0x0224                  _SPI1BUF = 0x224
+                    0x0280                  ADCBUF0 = 0x280
+                    0x0280                  _ADCBUF0 = 0x280
+                    0x0282                  ADCBUF1 = 0x282
+                    0x0282                  _ADCBUF1 = 0x282
+                    0x0284                  ADCBUF2 = 0x284
+                    0x0284                  _ADCBUF2 = 0x284
+                    0x0286                  ADCBUF3 = 0x286
+                    0x0286                  _ADCBUF3 = 0x286
+                    0x0288                  ADCBUF4 = 0x288
+                    0x0288                  _ADCBUF4 = 0x288
+                    0x028a                  ADCBUF5 = 0x28a
+                    0x028a                  _ADCBUF5 = 0x28a
+                    0x028c                  ADCBUF6 = 0x28c
+                    0x028c                  _ADCBUF6 = 0x28c
+                    0x028e                  ADCBUF7 = 0x28e
+                    0x028e                  _ADCBUF7 = 0x28e
+                    0x0290                  ADCBUF8 = 0x290
+                    0x0290                  _ADCBUF8 = 0x290
+                    0x0292                  ADCBUF9 = 0x292
+                    0x0292                  _ADCBUF9 = 0x292
+                    0x0294                  ADCBUFA = 0x294
+                    0x0294                  _ADCBUFA = 0x294
+                    0x0296                  ADCBUFB = 0x296
+                    0x0296                  _ADCBUFB = 0x296
+                    0x0298                  ADCBUFC = 0x298
+                    0x0298                  _ADCBUFC = 0x298
+                    0x029a                  ADCBUFD = 0x29a
+                    0x029a                  _ADCBUFD = 0x29a
+                    0x029c                  ADCBUFE = 0x29c
+                    0x029c                  _ADCBUFE = 0x29c
+                    0x029e                  ADCBUFF = 0x29e
+                    0x029e                  _ADCBUFF = 0x29e
+                    0x02a0                  ADCON1 = 0x2a0
+                    0x02a0                  _ADCON1 = 0x2a0
+                    0x02a0                  _ADCON1bits = 0x2a0
+                    0x02a2                  ADCON2 = 0x2a2
+                    0x02a2                  _ADCON2 = 0x2a2
+                    0x02a2                  _ADCON2bits = 0x2a2
+                    0x02a4                  ADCON3 = 0x2a4
+                    0x02a4                  _ADCON3 = 0x2a4
+                    0x02a4                  _ADCON3bits = 0x2a4
+                    0x02a6                  ADCHS = 0x2a6
+                    0x02a6                  _ADCHS = 0x2a6
+                    0x02a6                  _ADCHSbits = 0x2a6
+                    0x02a8                  ADPCFG = 0x2a8
+                    0x02a8                  _ADPCFG = 0x2a8
+                    0x02a8                  _ADPCFGbits = 0x2a8
+                    0x02aa                  ADCSSL = 0x2aa
+                    0x02aa                  _ADCSSL = 0x2aa
+                    0x02aa                  _ADCSSLbits = 0x2aa
+                    0x02c6                  TRISB = 0x2c6
+                    0x02c6                  _TRISB = 0x2c6
+                    0x02c6                  _TRISBbits = 0x2c6
+                    0x02c8                  PORTB = 0x2c8
+                    0x02c8                  _PORTB = 0x2c8
+                    0x02c8                  _PORTBbits = 0x2c8
+                    0x02ca                  LATB = 0x2ca
+                    0x02ca                  _LATB = 0x2ca
+                    0x02ca                  _LATBbits = 0x2ca
+                    0x02cc                  TRISC = 0x2cc
+                    0x02cc                  _TRISC = 0x2cc
+                    0x02cc                  _TRISCbits = 0x2cc
+                    0x02ce                  PORTC = 0x2ce
+                    0x02ce                  _PORTC = 0x2ce
+                    0x02ce                  _PORTCbits = 0x2ce
+                    0x02d0                  LATC = 0x2d0
+                    0x02d0                  _LATC = 0x2d0
+                    0x02d0                  _LATCbits = 0x2d0
+                    0x02d2                  TRISD = 0x2d2
+                    0x02d2                  _TRISD = 0x2d2
+                    0x02d2                  _TRISDbits = 0x2d2
+                    0x02d4                  PORTD = 0x2d4
+                    0x02d4                  _PORTD = 0x2d4
+                    0x02d4                  _PORTDbits = 0x2d4
+                    0x02d6                  LATD = 0x2d6
+                    0x02d6                  _LATD = 0x2d6
+                    0x02d6                  _LATDbits = 0x2d6
+                    0x02d8                  TRISE = 0x2d8
+                    0x02d8                  _TRISE = 0x2d8
+                    0x02d8                  _TRISEbits = 0x2d8
+                    0x02da                  PORTE = 0x2da
+                    0x02da                  _PORTE = 0x2da
+                    0x02da                  _PORTEbits = 0x2da
+                    0x02dc                  LATE = 0x2dc
+                    0x02dc                  _LATE = 0x2dc
+                    0x02dc                  _LATEbits = 0x2dc
+                    0x02de                  TRISF = 0x2de
+                    0x02de                  _TRISF = 0x2de
+                    0x02de                  _TRISFbits = 0x2de
+                    0x02e0                  PORTF = 0x2e0
+                    0x02e0                  _PORTF = 0x2e0
+                    0x02e0                  _PORTFbits = 0x2e0
+                    0x02e2                  LATF = 0x2e2
+                    0x02e2                  _LATF = 0x2e2
+                    0x02e2                  _LATFbits = 0x2e2
+                    0x0300                  C1RXF0SID = 0x300
+                    0x0300                  _C1RXF0SID = 0x300
+                    0x0300                  _C1RXF0SIDbits = 0x300
+                    0x0302                  C1RXF0EIDH = 0x302
+                    0x0302                  _C1RXF0EIDH = 0x302
+                    0x0302                  _C1RXF0EIDHbits = 0x302
+                    0x0304                  C1RXF0EIDL = 0x304
+                    0x0304                  _C1RXF0EIDL = 0x304
+                    0x0304                  _C1RXF0EIDLbits = 0x304
+                    0x0308                  C1RXF1SID = 0x308
+                    0x0308                  _C1RXF1SID = 0x308
+                    0x0308                  _C1RXF1SIDbits = 0x308
+                    0x030a                  C1RXF1EIDH = 0x30a
+                    0x030a                  _C1RXF1EIDH = 0x30a
+                    0x030a                  _C1RXF1EIDHbits = 0x30a
+                    0x030c                  C1RXF1EIDL = 0x30c
+                    0x030c                  _C1RXF1EIDL = 0x30c
+                    0x030c                  _C1RXF1EIDLbits = 0x30c
+                    0x0310                  C1RXF2SID = 0x310
+                    0x0310                  _C1RXF2SID = 0x310
+                    0x0310                  _C1RXF2SIDbits = 0x310
+                    0x0312                  C1RXF2EIDH = 0x312
+                    0x0312                  _C1RXF2EIDH = 0x312
+                    0x0312                  _C1RXF2EIDHbits = 0x312
+                    0x0314                  C1RXF2EIDL = 0x314
+                    0x0314                  _C1RXF2EIDL = 0x314
+                    0x0314                  _C1RXF2EIDLbits = 0x314
+                    0x0318                  C1RXF3SID = 0x318
+                    0x0318                  _C1RXF3SID = 0x318
+                    0x0318                  _C1RXF3SIDbits = 0x318
+                    0x031a                  C1RXF3EIDH = 0x31a
+                    0x031a                  _C1RXF3EIDH = 0x31a
+                    0x031a                  _C1RXF3EIDHbits = 0x31a
+                    0x031c                  C1RXF3EIDL = 0x31c
+                    0x031c                  _C1RXF3EIDL = 0x31c
+                    0x031c                  _C1RXF3EIDLbits = 0x31c
+                    0x0320                  C1RXF4SID = 0x320
+                    0x0320                  _C1RXF4SID = 0x320
+                    0x0320                  _C1RXF4SIDbits = 0x320
+                    0x0322                  C1RXF4EIDH = 0x322
+                    0x0322                  _C1RXF4EIDH = 0x322
+                    0x0322                  _C1RXF4EIDHbits = 0x322
+                    0x0324                  C1RXF4EIDL = 0x324
+                    0x0324                  _C1RXF4EIDL = 0x324
+                    0x0324                  _C1RXF4EIDLbits = 0x324
+                    0x0328                  C1RXF5SID = 0x328
+                    0x0328                  _C1RXF5SID = 0x328
+                    0x0328                  _C1RXF5SIDbits = 0x328
+                    0x032a                  C1RXF5EIDH = 0x32a
+                    0x032a                  _C1RXF5EIDH = 0x32a
+                    0x032a                  _C1RXF5EIDHbits = 0x32a
+                    0x032c                  C1RXF5EIDL = 0x32c
+                    0x032c                  _C1RXF5EIDL = 0x32c
+                    0x032c                  _C1RXF5EIDLbits = 0x32c
+                    0x0330                  C1RXM0SID = 0x330
+                    0x0330                  _C1RXM0SID = 0x330
+                    0x0330                  _C1RXM0SIDbits = 0x330
+                    0x0332                  C1RXM0EIDH = 0x332
+                    0x0332                  _C1RXM0EIDH = 0x332
+                    0x0332                  _C1RXM0EIDHbits = 0x332
+                    0x0334                  C1RXM0EIDL = 0x334
+                    0x0334                  _C1RXM0EIDL = 0x334
+                    0x0334                  _C1RXM0EIDLbits = 0x334
+                    0x0338                  C1RXM1SID = 0x338
+                    0x0338                  _C1RXM1SID = 0x338
+                    0x0338                  _C1RXM1SIDbits = 0x338
+                    0x033a                  C1RXM1EIDH = 0x33a
+                    0x033a                  _C1RXM1EIDH = 0x33a
+                    0x033a                  _C1RXM1EIDHbits = 0x33a
+                    0x033c                  C1RXM1EIDL = 0x33c
+                    0x033c                  _C1RXM1EIDL = 0x33c
+                    0x033c                  _C1RXM1EIDLbits = 0x33c
+                    0x0340                  C1TX2SID = 0x340
+                    0x0340                  _C1TX2SID = 0x340
+                    0x0340                  _C1TX2SIDbits = 0x340
+                    0x0342                  C1TX2EID = 0x342
+                    0x0342                  _C1TX2EID = 0x342
+                    0x0342                  _C1TX2EIDbits = 0x342
+                    0x0344                  C1TX2DLC = 0x344
+                    0x0344                  _C1TX2DLC = 0x344
+                    0x0344                  _C1TX2DLCbits = 0x344
+                    0x0346                  C1TX2B1 = 0x346
+                    0x0346                  _C1TX2B1 = 0x346
+                    0x0346                  _C1TX2B1bits = 0x346
+                    0x0348                  C1TX2B2 = 0x348
+                    0x0348                  _C1TX2B2 = 0x348
+                    0x0348                  _C1TX2B2bits = 0x348
+                    0x034a                  C1TX2B3 = 0x34a
+                    0x034a                  _C1TX2B3 = 0x34a
+                    0x034a                  _C1TX2B3bits = 0x34a
+                    0x034c                  C1TX2B4 = 0x34c
+                    0x034c                  _C1TX2B4 = 0x34c
+                    0x034c                  _C1TX2B4bits = 0x34c
+                    0x034e                  C1TX2CON = 0x34e
+                    0x034e                  _C1TX2CON = 0x34e
+                    0x034e                  _C1TX2CONbits = 0x34e
+                    0x0350                  C1TX1SID = 0x350
+                    0x0350                  _C1TX1SID = 0x350
+                    0x0350                  _C1TX1SIDbits = 0x350
+                    0x0352                  C1TX1EID = 0x352
+                    0x0352                  _C1TX1EID = 0x352
+                    0x0352                  _C1TX1EIDbits = 0x352
+                    0x0354                  C1TX1DLC = 0x354
+                    0x0354                  _C1TX1DLC = 0x354
+                    0x0354                  _C1TX1DLCbits = 0x354
+                    0x0356                  C1TX1B1 = 0x356
+                    0x0356                  _C1TX1B1 = 0x356
+                    0x0356                  _C1TX1B1bits = 0x356
+                    0x0358                  C1TX1B2 = 0x358
+                    0x0358                  _C1TX1B2 = 0x358
+                    0x0358                  _C1TX1B2bits = 0x358
+                    0x035a                  C1TX1B3 = 0x35a
+                    0x035a                  _C1TX1B3 = 0x35a
+                    0x035a                  _C1TX1B3bits = 0x35a
+                    0x035c                  C1TX1B4 = 0x35c
+                    0x035c                  _C1TX1B4 = 0x35c
+                    0x035c                  _C1TX1B4bits = 0x35c
+                    0x035e                  C1TX1CON = 0x35e
+                    0x035e                  _C1TX1CON = 0x35e
+                    0x035e                  _C1TX1CONbits = 0x35e
+                    0x0360                  C1TX0SID = 0x360
+                    0x0360                  _C1TX0SID = 0x360
+                    0x0360                  _C1TX0SIDbits = 0x360
+                    0x0362                  C1TX0EID = 0x362
+                    0x0362                  _C1TX0EID = 0x362
+                    0x0362                  _C1TX0EIDbits = 0x362
+                    0x0364                  C1TX0DLC = 0x364
+                    0x0364                  _C1TX0DLC = 0x364
+                    0x0364                  _C1TX0DLCbits = 0x364
+                    0x0366                  C1TX0B1 = 0x366
+                    0x0366                  _C1TX0B1 = 0x366
+                    0x0366                  _C1TX0B1bits = 0x366
+                    0x0368                  C1TX0B2 = 0x368
+                    0x0368                  _C1TX0B2 = 0x368
+                    0x0368                  _C1TX0B2bits = 0x368
+                    0x036a                  C1TX0B3 = 0x36a
+                    0x036a                  _C1TX0B3 = 0x36a
+                    0x036a                  _C1TX0B3bits = 0x36a
+                    0x036c                  C1TX0B4 = 0x36c
+                    0x036c                  _C1TX0B4 = 0x36c
+                    0x036c                  _C1TX0B4bits = 0x36c
+                    0x036e                  C1TX0CON = 0x36e
+                    0x036e                  _C1TX0CON = 0x36e
+                    0x036e                  _C1TX0CONbits = 0x36e
+                    0x0370                  C1RX1SID = 0x370
+                    0x0370                  _C1RX1SID = 0x370
+                    0x0370                  _C1RX1SIDbits = 0x370
+                    0x0372                  C1RX1EID = 0x372
+                    0x0372                  _C1RX1EID = 0x372
+                    0x0372                  _C1RX1EIDbits = 0x372
+                    0x0374                  C1RX1DLC = 0x374
+                    0x0374                  _C1RX1DLC = 0x374
+                    0x0374                  _C1RX1DLCbits = 0x374
+                    0x0376                  C1RX1B1 = 0x376
+                    0x0376                  _C1RX1B1 = 0x376
+                    0x0376                  _C1RX1B1bits = 0x376
+                    0x0378                  C1RX1B2 = 0x378
+                    0x0378                  _C1RX1B2 = 0x378
+                    0x0378                  _C1RX1B2bits = 0x378
+                    0x037a                  C1RX1B3 = 0x37a
+                    0x037a                  _C1RX1B3 = 0x37a
+                    0x037a                  _C1RX1B3bits = 0x37a
+                    0x037c                  C1RX1B4 = 0x37c
+                    0x037c                  _C1RX1B4 = 0x37c
+                    0x037c                  _C1RX1B4bits = 0x37c
+                    0x037e                  C1RX1CON = 0x37e
+                    0x037e                  _C1RX1CON = 0x37e
+                    0x037e                  _C1RX1CONbits = 0x37e
+                    0x0380                  C1RX0SID = 0x380
+                    0x0380                  _C1RX0SID = 0x380
+                    0x0380                  _C1RX0SIDbits = 0x380
+                    0x0382                  C1RX0EID = 0x382
+                    0x0382                  _C1RX0EID = 0x382
+                    0x0382                  _C1RX0EIDbits = 0x382
+                    0x0384                  C1RX0DLC = 0x384
+                    0x0384                  _C1RX0DLC = 0x384
+                    0x0384                  _C1RX0DLCbits = 0x384
+                    0x0386                  C1RX0B1 = 0x386
+                    0x0386                  _C1RX0B1 = 0x386
+                    0x0386                  _C1RX0B1bits = 0x386
+                    0x0388                  C1RX0B2 = 0x388
+                    0x0388                  _C1RX0B2 = 0x388
+                    0x0388                  _C1RX0B2bits = 0x388
+                    0x038a                  C1RX0B3 = 0x38a
+                    0x038a                  _C1RX0B3 = 0x38a
+                    0x038a                  _C1RX0B3bits = 0x38a
+                    0x038c                  C1RX0B4 = 0x38c
+                    0x038c                  _C1RX0B4 = 0x38c
+                    0x038c                  _C1RX0B4bits = 0x38c
+                    0x038e                  C1RX0CON = 0x38e
+                    0x038e                  _C1RX0CON = 0x38e
+                    0x038e                  _C1RX0CONbits = 0x38e
+                    0x0390                  C1CTRL = 0x390
+                    0x0390                  _C1CTRL = 0x390
+                    0x0390                  _C1CTRLbits = 0x390
+                    0x0392                  C1CFG1 = 0x392
+                    0x0392                  _C1CFG1 = 0x392
+                    0x0392                  _C1CFG1bits = 0x392
+                    0x0394                  C1CFG2 = 0x394
+                    0x0394                  _C1CFG2 = 0x394
+                    0x0394                  _C1CFG2bits = 0x394
+                    0x0396                  C1INTF = 0x396
+                    0x0396                  _C1INTF = 0x396
+                    0x0396                  _C1INTFbits = 0x396
+                    0x0398                  C1INTE = 0x398
+                    0x0398                  _C1INTE = 0x398
+                    0x0398                  _C1INTEbits = 0x398
+                    0x039a                  C1EC = 0x39a
+                    0x039a                  _C1EC = 0x39a
+                    0x039a                  _C1ECbits = 0x39a
+                    0x039a                  C1RERRCNT = 0x39a
+                    0x039a                  _C1RERRCNT = 0x39a
+                    0x039b                  C1TERRCNT = 0x39b
+                    0x039b                  _C1TERRCNT = 0x39b
+                    0x0740                  RCON = 0x740
+                    0x0740                  _RCON = 0x740
+                    0x0740                  _RCONbits = 0x740
+                    0x0742                  OSCCON = 0x742
+                    0x0742                  _OSCCON = 0x742
+                    0x0742                  _OSCCONbits = 0x742
+                    0x0742                  OSCCONL = 0x742
+                    0x0742                  _OSCCONL = 0x742
+                    0x0743                  OSCCONH = 0x743
+                    0x0743                  _OSCCONH = 0x743
+                    0x0760                  NVMCON = 0x760
+                    0x0760                  _NVMCON = 0x760
+                    0x0760                  _NVMCONbits = 0x760
+                    0x0762                  NVMADR = 0x762
+                    0x0762                  _NVMADR = 0x762
+                    0x0764                  NVMADRU = 0x764
+                    0x0764                  _NVMADRU = 0x764
+                    0x0764                  _NVMADRUbits = 0x764
+                    0x0766                  NVMKEY = 0x766
+                    0x0766                  _NVMKEY = 0x766
+                    0x0770                  PMD1 = 0x770
+                    0x0770                  _PMD1 = 0x770
+                    0x0770                  _PMD1bits = 0x770
+                    0x0772                  PMD2 = 0x772
+                    0x0772                  _PMD2 = 0x772
+                    0x0772                  _PMD2bits = 0x772
+                    0x0022                  ACCA = 0x22
+                    0x0022                  _ACCA = 0x22
+                    0x0028                  ACCB = 0x28
+                    0x0028                  _ACCB = 0x28
+                    0x0300                  CAN1 = 0x300
+                    0x0300                  _CAN1 = 0x300
+                    0x0140                  IC1 = 0x140
+                    0x0140                  _IC1 = 0x140
+                    0x0144                  IC2 = 0x144
+                    0x0144                  _IC2 = 0x144
+                    0x0158                  IC7 = 0x158
+                    0x0158                  _IC7 = 0x158
+                    0x015c                  IC8 = 0x15c
+                    0x015c                  _IC8 = 0x15c
+                    0x0180                  OC1 = 0x180
+                    0x0180                  _OC1 = 0x180
+                    0x0186                  OC2 = 0x186
+                    0x0186                  _OC2 = 0x186
+                    0x018c                  OC3 = 0x18c
+                    0x018c                  _OC3 = 0x18c
+                    0x0192                  OC4 = 0x192
+                    0x0192                  _OC4 = 0x192
+                    0x0220                  SPI1 = 0x220
+                    0x0220                  _SPI1 = 0x220
+                    0x020c                  UART1 = 0x20c
+                    0x020c                  _UART1 = 0x20c
+                    0x0216                  UART2 = 0x216
+                    0x0216                  _UART2 = 0x216
+START GROUP
+LOAD /opt/microchip/xc16/v1.26/bin/bin/../../lib/libpic30-coff.a
+LOAD /opt/microchip/xc16/v1.26/bin/bin/../../lib/libm-coff.a
+LOAD /opt/microchip/xc16/v1.26/bin/bin/../../lib/libc-coff.a
+END GROUP
+OUTPUT(dist/default/production/30F_powerstart_v2pA1.X.production.cof coff-pic30)
+LOAD FGS
+LOAD data_init
+LOAD default_isr
+
+__c30_signature
+                  0x000000          0x6
+ __c30_signature
+                  0x000000          0x6 /opt/microchip/xc16/v1.26/bin/bin/../../lib/libpic30-coff.a(data_init_standard.o)
+
+global_variables.s.scn2
+                    0x0a00        0x47e
+ global_variables.s.scn2
+                    0x0a00        0x47e build/default/production/global_variables.o
+                    0x0a00                  phi_motor
+                    0x0a04                  phi_motor_magbased
+                    0x0a08                  phi_int
+                    0x0a0c                  phi_prop
+                    0x0a10                  phi_int_max_erpm
+                    0x0a14                  max_erpm_rampdown
+                    0x0a18                  phi_int_max_erpm_shutdown
+                    0x0a1a                  phi_int_2to3
+                    0x0a1c                  phi_int_3to2
+                    0x0a1e                  phi_int_direction_change
+                    0x0a20                  phi_int_start_regen
+                    0x0a22                  regen_rampup
+                    0x0a24                  phi_int_hall_measure
+                    0x0a26                  ampli_real
+                    0x0a2a                  ampli_imag
+                    0x0a2e                  ampli_prop
+                    0x0a30                  ampli_imag_prop
+                    0x0a32                  ampli_fw
+                    0x0a34                  i_force_regen
+                    0x0a36                  i_error_max_fixed
+                    0x0a38                  i_error_max_prop
+                    0x0a3a                  wir_thr
+                    0x0a3c                  wanted_i_real
+                    0x0a3e                  wanted_i_imag
+                    0x0a40                  phi_motor_prev
+                    0x0a42                  adc_current_offset
+                    0x0a48                  adc_current_offset_lsbs
+                    0x0a4e                  adc_current_prev
+                    0x0a54                  adc_current_polarity
+                    0x0a56                  pwm_period
+                    0x0a58                  pwm_period_rec
+                    0x0a5a                  pwm_deadtime
+                    0x0a5c                  main_loop_count
+                    0x0a5e                  counter
+                    0x0a62                  cycles_2to3
+                    0x0a64                  cycles_try_recov
+                    0x0a66                  monitoring_value
+                    0x0a68                  monitoring_count
+                    0x0a6a                  tx_var_address
+                    0x0a6c                  flags1
+                    0x0a6e                  flags2
+                    0x0a70                  flags_rom
+                    0x0a72                  flags_rom2
+                    0x0a74                  flags_CAN
+                    0x0a76                  str_buf
+                    0x0abc                  filter_I
+                    0x0ac0                  filter_Q
+                    0x0ac4                  filter_I_error
+                    0x0ac8                  filter_spd
+                    0x0acc                  filter_inv_vbat
+                    0x0ad0                  inv_vbat0
+                    0x0ad2                  filter_w8
+                    0x0ad6                  filter_w9
+                    0x0ada                  filter_wir
+                    0x0ade                  filter_hallX
+                    0x0afe                  filter_hallY
+                    0x0b1e                  filter_general_coeff
+                    0x0b20                  supply_voltage
+                    0x0b22                  battery_voltage
+                    0x0b24                  vbat0
+                    0x0b26                  throttle_raw1
+                    0x0b28                  throttle_raw2
+                    0x0b2a                  throttle
+                    0x0b2c                  thr_coeff_1
+                    0x0b32                  thr_coeff_2
+                    0x0b38                  thr1_offset
+                    0x0b3a                  thr1_range
+                    0x0b3c                  thr2_offset
+                    0x0b3e                  thr2_range
+                    0x0b40                  i_max_phase
+                    0x0b42                  i_max_bat_motoruse
+                    0x0b44                  i_max_bat_regenuse
+                    0x0b46                  dr0_counter
+                    0x0b48                  dr0_XX_msec
+                    0x0b4a                  dr0_pulse_duration
+                    0x0b4c                  motor_standstill_voltage
+                    0x0b4e                  can_txsid
+                    0x0b50                  can_rxsid
+                    0x0b52                  can_cfg1
+                    0x0b54                  can_cfg2
+                    0x0b56                  plic_3
+                    0x0b6a                  plic_2
+                    0x0b7e                  plic_1
+                    0x0b92                  alic_3
+                    0x0b9e                  alic_1
+                    0x0baa                  hall_array
+                    0x0bba                  imag_impedance
+                    0x0bbe                  imag_impedance_rom
+                    0x0bc2                  real_impedance
+                    0x0bc6                  real_impedance_rom
+                    0x0bca                  Z_ratio
+                    0x0bcc                  transimpedance
+                    0x0bce                  phi_int_for_impedance_measurement
+                    0x0bd0                  i_inductor_measurement
+                    0x0bd2                  class_d_remainder
+                    0x0bd8                  fil1ord_i_foc
+                    0x0bda                  fil2ord_i_error
+                    0x0bdc                  fil2ord_dr2_motor_speed
+                    0x0bde                  filt_spd_ctrl
+                    0x0be4                  filt_spd_ctrl_ffcoef
+                    0x0be6                  phi_wiggle
+                    0x0be8                  phi_int_wiggle
+                    0x0bea                  ampli_wiggle
+                    0x0bec                  i_min_recov
+                    0x0bee                  fil2ord_percentage
+                    0x0bf0                  fil2ord_speed_recovery
+                    0x0bf2                  pulse_perc_to_reach
+                    0x0bf4                  over_i_total_prop
+                    0x0bf6                  over_i_total_fixed
+                    0x0bf8                  fil2ord_i_meas
+                    0x0bfa                  temp_readout
+                    0x0bfc                  temp_stack
+                    0x0c00                  temp_data
+                    0x0c10                  temp_sens_now
+                    0x0c12                  temp_crc
+                    0x0c14                  temp_counter
+                    0x0c16                  temp_red_i_max_phase
+                    0x0c18                  temp_data_rxed
+                    0x0c1a                  temp_ids
+                    0x0c5a                  number_temp_sensors
+                    0x0c5c                  temp_limit
+                    0x0c6c                  temp_current_red
+                    0x0c7c                  max_fieldweak_ratio
+                    0x0c7e                  fieldweak
+                    0x0c80                  fwlic
+                    0x0c82                  phi_hf_offset
+                    0x0c84                  phi_hf_motor
+                    0x0c86                  ampli_hf_motor
+                    0x0c88                  wanted_phi_int
+                    0x0c8a                  count_ldm
+                    0x0c8e                  count_tot
+                    0x0c92                  stored_status
+                    0x0d22                  pll_bw
+                    0x0d24                  pll_damp
+                    0x0d26                  pll_coefs
+                    0x0d2a                  pll_phi
+                    0x0d2e                  pll_int
+                    0x0d32                  pred_i_real
+                    0x0d36                  pred_i_imag
+                    0x0d3a                  motor_filt_coeff
+                    0x0d3c                  phase_comp_coeff
+                    0x0d3e                  phi_step
+                    0x0d40                  phi_step_int
+                    0x0d42                  phi_step_max
+                    0x0d44                  ampli_lower_limit
+                    0x0d46                  ampli_upper_limit
+                    0x0d48                  ampli_rampdown
+                    0x0d4a                  filter_vbat
+                    0x0d4e                  vbat_filt_coeff
+                    0x0d50                  volt_scale
+                    0x0d52                  hvc_cutoff
+                    0x0d54                  hvc_start
+                    0x0d56                  hvc_ramp
+                    0x0d58                  lvc_cutoff
+                    0x0d5a                  lvc_start
+                    0x0d5c                  lvc_ramp
+                    0x0d5e                  max_accel
+                    0x0d62                  accel_ramp
+                    0x0d64                  filter_accel
+                    0x0d68                  accel_filt_coef
+                    0x0d6a                  phi_int_prev
+                    0x0d6e                  phi_offset
+                    0x0d70                  imp_collect_address
+                    0x0d72                  imp_process_address
+                    0x0d74                  regA
+                    0x0d78                  regB
+                    0x0d7c                  data_collected
+                    0x0da6                  data_collected_rom
+                    0x0dd0                  data_for_imp
+                    0x0dec                  data_variance_R
+                    0x0dfc                  data_variance_R_new
+                    0x0e0c                  data_variance_L
+                    0x0e1c                  data_variance_L_new
+                    0x0e2c                  data_collect_countdown_R
+                    0x0e2e                  data_collect_countdown_L
+                    0x0e30                  data_collect_countdown_R_rom
+                    0x0e32                  data_collect_countdown_L_rom
+                    0x0e34                  data_filt_exponent
+                    0x0e36                  data_current_limit_R
+                    0x0e38                  data_current_limit_L
+                    0x0e3a                  data_speed_limit
+                    0x0e3c                  Kv
+                    0x0e40                  Kv_rom
+                    0x0e44                  meas_L
+                    0x0e46                  meas_R
+                    0x0e48                  Va_raw
+                    0x0e4a                  sine_i_imag
+                    0x0e4c                  ampl_sine_iimag
+                    0x0e50                  phi_sine_iimag
+                    0x0e52                  phiint_sine_iimag
+                    0x0e54                  hall_offset
+                    0x0e58                  hall_stat
+                    0x0e6c                  menus_completed
+                    0x0e6e                  i_filter_offset
+                    0x0e70                  post_dr1_ramp
+                    0x0e74                  post_dr1_incr
+                    0x0e78                  post_dr1_time
+                    0x0e7a                  dummy1
+                    0x0e7c                  dummy2
+
+global_variables.s.scn1
+                    0x0800        0x200
+ global_variables.s.scn1
+                    0x0800        0x200 build/default/production/global_variables.o
+                    0x0800                  data_array_sin
+
+.bss                0x0e7e         0x8e
+ .bss               0x0e7e         0x40 build/default/production/reset_vector.o
+                    0x0e7e                  stackpointer
+ .bss               0x0ebe         0x22 build/default/production/imp_collect_data.o
+                    0x0ebe                  w
+                    0x0ec2                  Va
+                    0x0ec6                  Ia
+                    0x0eca                  Ib
+                    0x0ed4                  reg1
+                    0x0ed8                  reg2
+ .bss               0x0ee0         0x20 build/default/production/angle_amplitude.o
+ .bss               0x0f00          0xc build/default/production/imp_process_data.o
+
+throttle_ramp.s.scn1
+                    0x0f0c          0x4
+ throttle_ramp.s.scn1
+                    0x0f0c          0x4 build/default/production/throttle_ramp.o
+
+.bss                0x0f10          0x2
+ .bss               0x0f10          0x2 build/default/production/drive_3_all.o
+
+chip_update.s.scn1
+                  0x007e00        0x1fc
+ chip_update.s.scn1
+                  0x007e00        0x1fc build/default/production/chip_update.o
+                  0x007e00                  update_chip
+
+.ivt._C1Interrupt
+                  0x00004a          0x2
+ .ivt._C1Interrupt
+                  0x00004a          0x2 build/default/production/can_motor.o
+
+.text             0x000400       0x3e82
+ .text            0x000400        0x800 build/default/production/prog_mem.o
+                  0x000400                  restore_from_progmem
+                  0x00040c                  store_in_progmem
+                  0x000418                  restore_from_ascii
+                  0x00042a                  store_in_ascii
+                  0x00053c                  online_store_in_progmem
+                  0x000568                  erase_settings
+                  0x000800                  setup_rom
+ .text            0x000c00        0x5ca build/default/production/menu structure/menu_halls.o
+                  0x000c00                  menu_halls
+ .text            0x0011ca        0x590 build/default/production/menu structure/menu_recov.o
+                  0x0011ca                  menu_recov
+ .text            0x00175a        0x552 build/default/production/menu structure/menu_loop_coeffs.o
+                  0x00175a                  menu_loop_coeffs
+ .text            0x001cac        0x51c build/default/production/menu structure/menu_currents.o
+                  0x001cac                  menu_currents
+                  0x001f98                  display_current
+                  0x001fc6                  current_to_lsb
+ .text            0x0021c8        0x4b8 build/default/production/menu structure/menu_temp_functions.o
+                  0x0021c8                  temperature_readings
+                  0x002244                  temp_read_ids
+                  0x0024b2                  print_sensor_ids
+                  0x002550                  print_temp_limits
+                  0x0025e6                  enter_temp_limits
+ .text            0x002680        0x4a8 build/default/production/chip_status.o
+                  0x002680                  store_status
+                  0x00272e                  print_status
+ .text            0x002b28        0x498 build/default/production/menu structure/menu_erpms.o
+                  0x002b28                  menu_erpms
+                  0x002e8c                  print_kerpm
+                  0x002eb8                  input_kerpm
+ .text            0x002fc0        0x40c build/default/production/menu structure/menu_throttle.o
+                  0x002fc0                  menu_throttle
+ .text            0x0033cc        0x344 build/default/production/menu structure/menu_pwm.o
+                  0x0033cc                  menu_pwm
+ .text            0x003710        0x322 build/default/production/menu structure/menu_filters.o
+                  0x003710                  menu_filters
+ .text            0x003a32        0x2d8 build/default/production/menu structure/menu_misc.o
+                  0x003a32                  menu_misc
+ .text            0x003d0a        0x2d6 build/default/production/menu structure/menu_KvLR.o
+                  0x003d0a                  menu_KvLR
+ .text            0x003fe0        0x2a2 build/default/production/temp_routines.o
+                  0x003fe0                  temp_open
+                  0x003fea                  temp_read
+
+.text             0x000170        0x290
+ .text            0x000170        0x290 build/default/production/imp_collect_data_R.o
+                  0x000170                  process_for_R
+
+.text             0x004282        0x886
+ .text            0x004282        0x254 build/default/production/process_all_variables.o
+                  0x004282                  process_all_variables
+ .text            0x0044d6        0x232 build/default/production/menu structure/menu_battery.o
+                  0x0044d6                  menu_battery
+ .text            0x004708        0x20e build/default/production/imp_process_data.o
+                  0x004708                  reset_process_imp_data
+                  0x004712                  imp_process_data
+ .text            0x004916        0x1f2 build/default/production/throttle_read.o
+                  0x004916                  throttle_read
+                  0x0049a4                  throttle_rawx_to_wanted_i_real
+                  0x004af4                  raw_to_throttle
+
+menu structure/main_menu.s.scn1
+                  0x004b08        0x1f2
+ menu structure/main_menu.s.scn1
+                  0x004b08        0x1f2 build/default/production/menu structure/main_menu.o
+
+.text             0x004cfa       0x2d82
+ .text            0x004cfa        0x1b0 build/default/production/menu structure/menu_foc.o
+                  0x004cfa                  menu_foc
+ .text            0x004eaa        0x1ae build/default/production/imp_collect_data_L.o
+                  0x004eaa                  process_for_L
+ .text            0x005058        0x1a4 build/default/production/menu structure/convert_to_readable_L_and_R.o
+                  0x005058                  print_readable_L
+                  0x0050aa                  print_readable_R
+                  0x005116                  input_L
+                  0x005192                  input_R
+ .text            0x0051fc        0x1a2 build/default/production/determine_update.o
+                  0x0051fc                  determine_update_direction
+                  0x005294                  determine_update_direction_dr2hl
+                  0x0052f0                  determine_update_direction_dr2sl
+                  0x005350                  determine_update_direction_dr1
+ .text            0x00539e        0x18e build/default/production/drive_2to3_hall.o
+                  0x00539e                  initialise_drive_2to3_hall
+                  0x005494                  phase_step_dr23hl
+ .text            0x00552c        0x180 build/default/production/drive_3_measurement_functions.o
+                  0x00552c                  to_erpm
+                  0x0055d8                  measure_halls
+ .text            0x0056ac        0x180 build/default/production/imp_collect_data.o
+                  0x0056ac                  reset_collect_imp_data
+                  0x0056c0                  store_imp_data
+                  0x0056ea                  restore_imp_data
+                  0x005718                  imp_collect_data
+                  0x0057a6                  try_R
+                  0x0057b4                  filter_collected
+ .text            0x00582c        0x15e build/default/production/subrout_232.o
+                  0x00582c                  init_232
+                  0x00583a                  tx_ram_str_232
+                  0x00584e                  tx_str_232
+                  0x005884                  tx_char_232
+                  0x00588c                  tx_word_232
+                  0x0058a8                  clr_scr_232
+                  0x0058bc                  rx_str_232
+                  0x005924                  rx_char_232
+                  0x00592e                  rx_hex_232
+                  0x005980                  rx_endchar_232
+ .text            0x00598a        0x154 build/default/production/menu structure/menu_functions.o
+                  0x00598a                  smap_any_key_to_continue
+                  0x0059c6                  get_number
+                  0x005a02                  get_choise
+                  0x005a24                  get_signed_decimal_number
+ .text            0x005ade        0x146 build/default/production/initialise.o
+                  0x005ade                  initialise
+                  0x005b5a                  reset_filters
+                  0x005b9a                  clear_variables
+ .text            0x005c24        0x146 build/default/production/menu structure/main_menu.o
+                  0x005c24                  main_menu
+                  0x005d66                  chip_version
+ .text            0x005d6a        0x140 build/default/production/motor_sinus.o
+                  0x005d6a                  write_motor_sinus
+ .text            0x005eaa        0x138 build/default/production/menu structure/menu_throttle_functions.o
+                  0x005eaa                  throttle_tryout
+                  0x005f30                  mthr_enter_poly_coeff
+                  0x005f64                  mthr_print_voltage
+                  0x005f8c                  menu_thr_print_number
+ .text            0x005fe2        0x136 build/default/production/menu structure/menu_can.o
+                  0x005fe2                  menu_can
+ .text            0x006118        0x134 build/default/production/menu structure/menu_rom.o
+                  0x006118                  menu_rom
+ .text            0x00624c        0x130 build/default/production/drive_2_hall.o
+                  0x00624c                  initialise_drive_2_hall
+ .text            0x00637c        0x12a build/default/production/fill_pwm_and_sin_arrays.o
+                  0x00637c                  fill_pwm_and_sin_arrays
+ .text            0x0064a6        0x128 build/default/production/menu structure/menu_sensors.o
+                  0x0064a6                  menu_sensors
+ .text            0x0065ce        0x122 build/default/production/current_control.o
+                  0x0065ce                  current_control
+                  0x00660e                  fieldweakening
+                  0x0066b4                  current_control_1
+ .text            0x0066f0        0x11e build/default/production/drive_1_all.o
+                  0x0066f0                  initialise_drive_1_all
+ .text            0x00680e        0x114 build/default/production/ADC.o
+                  0x00680e                  ADC_open
+                  0x006848                  ADC_current
+                  0x006864                  ADC_voltage
+                  0x00687c                  ADC_read_voltage
+                  0x006894                  ADC_read_current
+                  0x0068c8                  ADC_online_filter_offset
+                  0x00690a                  ADC_find_max
+ .text            0x006922         0xe6 build/default/production/menu structure/menu_stored_status.o
+                  0x006922                  menu_stored_status
+ .text            0x006a08         0xe2 build/default/production/subrout_str.o
+                  0x006a08                  word_to_hex_str
+                  0x006a40                  word_to_Q15_str
+                  0x006a56                  word_to_01_str
+                  0x006a8e                  word_to_udec_str
+                  0x006ad6                  word_to_sdec_str
+ .text            0x006aea         0xe2 build/default/production/menu structure/menu_temp.o
+                  0x006aea                  menu_temp
+ .text            0x006bcc         0xe0 build/default/production/drive_2_sensorless.o
+                  0x006bcc                  initialise_drive_2_sensorless
+ .text            0x006cac         0xde build/default/production/floating_point.o
+                  0x006cac                  fp_oneover
+                  0x006cbe                  fp_mult
+                  0x006cd4                  fp_add
+                  0x006d06                  fp_sqrt
+                  0x006d4c                  fp_print
+ .text            0x006d8a         0xdc build/default/production/throttle_ramp.o
+                  0x006d8a                  throttle_ramp
+ .text            0x006e66         0xda build/default/production/chip_update.o
+                  0x006e66                  pre_update
+ .text            0x006f40         0xd8 build/default/production/drive_2to3_sensorless.o
+                  0x006f40                  initialise_drive_2to3_sensorless
+ .text            0x007018         0xd6 build/default/production/menu structure/motor_impedance_measurement.o
+                  0x007018                  motor_impedance_measurement
+ .text            0x0070ee         0xd4 build/default/production/drive_0_all.o
+                  0x0070ee                  initialise_drive_0_all
+ .text            0x0071c2         0xd2 build/default/production/safety.o
+                  0x0071c2                  safety
+                  0x007204                  safety_dr2
+                  0x00726c                  diff_norm_2
+                  0x00727c                  sqrt_w8_w9
+ .text            0x007294         0xd2 build/default/production/menu structure/calc_rom_variables.o
+                  0x007294                  calc_rom_variables
+                  0x00729e                  calc_ram_variables
+                  0x0072b8                  calc_rom_variables_online
+ .text            0x007366         0xc6 build/default/production/hallbased_phase_control.o
+                  0x007366                  hall_read_and_pll
+                  0x0073ac                  hall_measure_phase
+                  0x0073e0                  pll_error_check
+ .text            0x00742c         0xc4 build/default/production/drive_3_all.o
+                  0x00742c                  initialise_drive_3_all
+ .text            0x0074f0         0xc4 build/default/production/menu structure/current_sensor_offset_measurement.o
+                  0x0074f0                  current_sensor_offset_measurement
+ .text            0x0075b4         0xc2 build/default/production/calc_wanted_ampli_imag.o
+                  0x0075b4                  hall_control_imag
+                  0x0075f0                  calc_ampli_imag
+ .text            0x007676         0xba build/default/production/menu structure/mim_calculations.o
+                  0x007676                  calc_impedance_based_coeffs
+                  0x0076c4                  reverse_determine_imag_impedance
+                  0x007702                  reverse_determine_real_impedance
+ .text            0x007730         0xa8 build/default/production/monitoring.o
+                  0x007730                  monitoring
+ .text            0x0077d8         0xa8 build/default/production/menu structure/report_checksum.o
+                  0x0077d8                  report_checksum
+ .text            0x007880         0xa4 build/default/production/angle_amplitude.o
+                  0x007880                  angle_amplitude_fast
+                  0x0078ba                  angle_amplitude_accurate
+                  0x0078e0                  initialise_angle_amplitude_accurate
+ .text            0x007924         0x7a build/default/production/halls.o
+                  0x007924                  halls_open
+                  0x00792c                  update_hall_positions
+                  0x007966                  build_hall_array
+ .text            0x00799e         0x70 build/default/production/speed_control.o
+                  0x00799e                  speed_control
+ .text            0x007a0e         0x6e build/default/production/can_initialise.o
+                  0x007a0e                  CAN_open_RX
+                  0x007a52                  CAN_open_TX
+
+can_motor.s.scn1
+                  0x007a7c         0x64
+ can_motor.s.scn1
+                  0x007a7c         0x64 build/default/production/can_motor.o
+                  0x007a7c                  _C1Interrupt
+                  0x007ac2                  CAN_tx_throttle
+
+.text             0x007ae0        0x178
+ .text            0x007ae0         0x4a build/default/production/sine_i_imag.o
+                  0x007ae0                  initialise_sine_walk
+                  0x007af2                  update_sine_i_imag
+                  0x007af6                  reduce_sine_i_imag
+ .text            0x007b2a         0x44 build/default/production/current_filtering.o
+                  0x007b2a                  current_filtering
+ .text            0x007b6e         0x3e build/default/production/backemf_phase_control.o
+                  0x007b6e                  backemf_phase_control
+ .text            0x007bac         0x3c build/default/production/LEDs.o
+                  0x007bac                  LEDs_open
+                  0x007bbe                  LED_menu_error
+ .text            0x007be8         0x3a build/default/production/PWM.o
+                  0x007be8                  PWM_open
+                  0x007c0e                  PWM_continuous
+                  0x007c18                  PWM_discontinuous
+ .text            0x007c22         0x36 build/default/production/correct_drive_selection.o
+                  0x007c22                  correct_drive_2
+                  0x007c36                  correct_drive_2to3
+                  0x007c4a                  correct_drive_3
+
+.dinit            0x007c58         0x32
+ .dinit           0x007c58         0x32 data_init
+
+.text             0x007c8a         0xf6
+ .text            0x007c8a         0x30 build/default/production/timers.o
+                  0x007c8a                  timers_open
+ .text            0x007cba         0x2e build/default/production/drive_3_hall_measure.o
+                  0x007cba                  initialise_drive_3_hall_measure
+ .text            0x007ce8         0x28 build/default/production/init_interrupts.o
+                  0x007ce8                  init_interrupts
+ .text            0x007d10         0x28 build/default/production/throttle_open.o
+                  0x007d10                  throttle_open
+ .text            0x007d38         0x26 build/default/production/demod.o
+                  0x007d38                  demod
+ .text            0x007d5e         0x22 build/default/production/inverse_vbat.o
+                  0x007d5e                  inverse_vbat
+
+reset_vector.s.scn1
+                  0x007d80         0x12
+ reset_vector.s.scn1
+                  0x007d80         0x12 build/default/production/reset_vector.o
+                  0x007d80                  _reset
+
+.text             0x007d92          0xa
+ .text            0x007d92          0xa build/default/production/main_motor.o
+                  0x007d92                  main_motor

@@ -1,0 +1,155 @@
+.include "p30F4011.inc"
+.include "../variables/defines.inc"
+
+.text
+
+;*****************************************************************
+
+.global calc_display_L
+calc_display_L:
+;--------------------------------------- L[12.4] = (54684/65536) * 2^-32 * (imag_impedance*mlc*Vbat*R[8.8])
+;--------------------------------------- (imag_impedance*mlc*Vbat*R[8.8]) is a 48 bit multiplication
+;--------------------------------------- after this, throw away the 32 LSB's and multiply with 54684,
+;--------------------------------------- only keep top 16 bits, this is L[12.4]
+;--------------------------------------- V_battery * transimpedance
+    mov battery_voltage, w0
+    mov transimpedance, w1
+    mul.uu w0, w1, w10
+                                        ;00:w11:w10 = V_bat * R[8.8]
+;--------------------------------------- * mlc
+    mov main_loop_count, w0
+    mul.uu w0, w11, w6
+                                        ;w7:w6:00    = w11 * mlc
+    mul.uu w0, w10, w10
+                                        ;00:w11:w10  = w10 * mlc
+    add w6, w11, w11
+    addc w7, #0, w12
+                                        ;w12:w11:w10 = mlc * V_bat * R[8.8]
+;--------------------------------------- * imag_impedance
+    mov imag_impedance, w0
+    mul.uu w0, w10, w4
+                                        ;00:w5:w4 = w10 * imag_impedance
+    mul.uu w0, w11, w2
+                                        ;w3:w2:00 = w11 * imag_impedance
+    add w2, w5, w5
+    addc w3, #0, w6
+                                        ;w6:w5:w4 = w11:w10 * imag_impedance
+    mul.uu w0, w12, w2
+                                        ;w2:00:00 = w12 * imag_impedance
+    add w2, w6, w6
+                                        ;w6:w5:w4 = w12:w11:w10 * imag_impedance
+;--------------------------------------- * 54684
+
+    mov #54684, w0
+    mul.uu w0, w6, w2
+                                        ;w3 = L[12.4]
+;--------------------------------------- display value
+
+    push w3
+
+    lsr w3, #4, w0
+    mov #str_buf, w1
+    call word_to_udec_str
+    mov #str_buf, w0
+    call tx_ram_str_232
+
+    pop w3
+
+    sl w3, #12, w0
+    mov #str_buf, w1
+    call word_to_01_str
+    mov #str_buf+2, w0
+    clr.b [w0]
+    mov #str_buf, w0
+    call tx_ram_str_232
+
+;--------------------------------------- end
+
+    return
+
+
+;*****************************************************************
+
+.global convert_to_readable_R
+convert_to_readable_R:
+;--------------------------------------- Z_real[13.3] in mOhm = V[lsb] * Vbat * R[8.8] * 153.6 / (65536 * I[lsb])
+
+;--------------------------------------- 153.6 / (65536 * I[lsb])
+    mov #153, w1
+    mov #39322, w0
+    mov i_inductor_measurement, w2
+
+    repeat #17
+    div.ud w0, w2
+                                        ;w0 = 153.6 / 65536*I[lsb]
+;--------------------------------------- * R[8.8]
+
+    mov transimpedance, w1
+    mul.uu w0, w1, w10
+                                        ;w11:w10 = R[8.8] * 153.6 / 65536 * I[lsb]
+;--------------------------------------- * V[lsb]
+
+    mov measured_resistance, w0
+
+    mul.uu w10, w0, w4
+                                        ;00:w5:w4 = V[lsb] * w10
+    mul.uu w11, w0, w0
+                                        ;w1:w0:00 = V[lsb] * w11
+    add w0, w5, w5
+    addc w1, #0, w6
+                                        ;w6:w5:w4 = V[lsb] * R[8.8] * 153.6 / 65536 * I[lsb]
+;--------------------------------------- * V_bat
+
+    mov battery_voltage, w0
+
+    mul.uu w0, w4, w10
+                                        ;00:00:w11:w10 = V_bat * w4
+    mul.uu w0, w5, w2
+                                        ;00:w3:w2:00   = V_bat * w5
+    add w2, w11, w11
+    addc w3, #0, w12
+                                        ;00:w12:w11:w10 = V_bat * w5:w4
+    mul.uu w0, w6, w2
+                                        ;w3:w2:00:00   = V_bat * w6
+    add w2, w12, w12
+    addc w3, #0, w13
+                                        ;w13:w12:w11:w10 = V_bat * V[lsb] * R[8.8] * 153.6 / 65536 * I[lsb]
+                                        ;w12 = Z_real [13.3]
+;--------------------------------------- store value
+
+    mov w12, measured_resistance
+
+;--------------------------------------- end
+
+    return
+
+;*****************************************************************
+
+.global display_resistance
+display_resistance:
+
+    mov measured_resistance, w12
+
+    lsr w12, #3, w0
+    mov #str_buf, w1
+    call word_to_udec_str
+    mov #str_buf, w0
+    call tx_ram_str_232
+
+    mov measured_resistance, w12
+
+    sl w12, #13, w0
+    mov #str_buf, w1
+    call word_to_01_str
+    mov #str_buf+2, w0
+    clr.b [w0]
+    mov #str_buf, w0
+    call tx_ram_str_232
+
+    return
+
+
+
+
+.end
+

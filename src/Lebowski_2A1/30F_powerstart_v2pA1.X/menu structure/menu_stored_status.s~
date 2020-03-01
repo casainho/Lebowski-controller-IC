@@ -1,0 +1,88 @@
+.include "p30F4011.inc"
+.include "defines.inc"
+
+.text
+.global menu_battery
+menu_battery:
+    call clr_scr_232
+;------------------------------------------------------
+;a) battery voltage
+;------------------------------------------------------
+    mov #tblpage(bat_mes_a), w0
+    mov #tbloffset(bat_mes_a), w1
+    call tx_str_232
+
+    mov battery_voltage, w0
+    lsr w0, #4, w0
+    mov #str_buf, w1
+    call word_to_udec_str
+    mov #str_buf, w0
+    call tx_ram_str_232
+
+    mov battery_voltage, w0
+    sl w0, #12, w0
+    mov #str_buf, w1
+    call word_to_01_str
+    clr.b str_buf+2
+    mov #str_buf, w0
+    call tx_ram_str_232
+
+    mov #tblpage(bat_mes_a1), w0
+    mov #tbloffset(bat_mes_a1), w1
+    call tx_str_232
+
+    bra mb_msg_z
+
+mb_opt_a:
+
+    mov #10, w0
+    call get_signed_decimal_number
+
+    sl w0, #4, w0
+    lsr w1, #12, w1
+    ior w0, w1, w0
+
+    mov w0, battery_voltage
+
+    bra menu_battery
+
+;------------------------------------------------------
+;z) return to main menu
+;------------------------------------------------------
+mb_msg_z:
+    mov #tblpage(bat_mes_z), w0
+    mov #tbloffset(bat_mes_z), w1
+    call tx_str_232
+
+    bra mb_msg_choise
+mb_opt_z:
+    return
+
+;------------------------------------------------------
+mb_msg_choise:
+
+    call get_choise
+
+    mov #'a', w1
+    cp w0, w1
+    bra z, mb_opt_a
+    mov #'z', w1
+    cp w0, w1
+    bra z, mb_opt_z
+
+    bra menu_battery
+
+;**********************************************************
+
+bat_mes_a:
+    .ascii "\na) battery voltage: \0"
+bat_mes_a1:
+    .ascii " V\0"
+bat_mes_z:
+    .ascii "\n\nz) return to main menu"
+    .ascii "\n\n\0"
+
+
+
+.end
+

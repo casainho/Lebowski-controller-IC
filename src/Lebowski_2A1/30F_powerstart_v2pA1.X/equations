@@ -1,0 +1,149 @@
+ For the inductor:
+
+V_a[V] = 2 pi f L I_a[A]
+
+note: _a is amplitude
+
+V_a[V] = Vbat[V] * 1.15 * V_a[lsb] / 65536
+
+note: the 1.15 comes from the moving midpoint and is implemented in motor_sinus
+
+f[Hz] = (phi_int / 65536) * (30e6 / mlc)
+
+I[lsb] = I_a[A] * 0.75 * 32 * 1024 * R_sens[Ohm] / 5
+	= I_a[A] * 4915 * R_sens[Ohm]
+
+all combined gives
+
+V[lsb] = phi_int * I[lsb] * L * 33349 / (R_sens[Ohm] * mlc * Vbat[V])
+
+to be able to deal with multiple controllers on one motor induct_scale was introduced:
+multiplication factor for voltage: 4 * induct_scale / 65536, then:
+
+V[lsb] = 2^-14 * phi_int * I[lsb] * induct_scale * L * 33349 / (R_sens[Ohm] * mlc * Vbat[V])
+
+supply measurement was introduced such that Vbat[V] * inv_vbat = Vbat0[V] * inv_vbat0
+with Vbat0 (and inv_vbat0( the battery voltage at time of imag_impedance measurement, 
+
+V[lsb] = 2^-14 * phi_int * I[lsb] * induct_scale * L * inv_vbat * 33349 / (R_sens[Ohm] * mlc * Vbat0[V] * inv_vbat0)
+
+in the controller V_imag[lsb] is calculated as
+
+V_imag[lsb] = 2^-50 * phi_int * I[lsb] * induct_scale * inv_vbat * imag_impedance
+
+so imag_impedance is given by:
+
+imag_impedance = 2^36 * 33349 * L / (R_sens[Ohm] * mlc * Vbat0[V] * inv_vbat0)
+		= (2^36 * 33349 / 30e6) * L * f_sample[Hz] / (R_sens[Ohm] * Vbat0[V] * inv_vbat0)
+
+to display L[12.4],
+
+L[12.4] = 16e6 * L
+R_sens[8.8] = R_sens[Ohm] * 256000
+Vbat0[12.4] = 16 * Vbat0[V]
+f_sample[Hz] = 30e6 / mlc
+
+L[12.4] = 2^-65 * 62885 * imag_impedance * R_sens[8.8] * mlc * Vbat0[12.4] * inv_vbat0
+
+		
+
+		
+		
+For the resistor:
+
+V_a[V] = R[Ohm] I_a[A]
+
+V[lsb] = I[lsb] * R[Ohm] * inv_vbat * 65536 / (1.15 * 4915 * R_sens[Ohm] * Vbat0[V] * inv_vbat0)
+
+in the controller V_real[lsb] is calculated as
+
+V_real[lsb] = I[lsb] * 2^-26 * real_impedance * inv_vbat
+
+so real_impedance is given by:
+
+real_impedance = 2^42 * R[Ohm] / (1.15 * 4915 * R_sens[Ohm] * Vbat0[V] * inv_vbat0)
+
+to display R[13.3]
+
+R[13.3] = 8000 * R[Ohm]
+R_sens[8.8] = R_sens[Ohm] * 256000
+Vbat0[12.4] = 16 * Vbat0[V]
+
+R[13.3] = 2^-54 * 45218 * real_impedance * R_sens[8.8] * Vbat0[12.4] * inv_vbat0
+
+
+
+
+
+For (static) magnetic field angle compensation:
+
+Need to know the motor speed (phi_int) at full battery voltage (called phi_int_full_voltage)
+
+phi_int_full_voltage = ( phi_int_measured / ( ampli_real_measured[lsb] - I_real_measured[lsb] * 2^-26 * real_impedance * inv_vbat ) ) * inv_vbat0 / inv_vbat
+phi_int_full_voltage = 2^16 * phi_int_100 / inv_vbat
+with
+phi_int_100 = 2^-16 * inv_vbat0 * ( phi_int_measured / (ampli_real_measured[lsb] - I_real_measured[lsb] * 2^-26 * real_impedance * inv_vbat ) ) 
+
+real part of magnetic field proportional to backemf voltage:
+
+Vreal[lsb] = V_backemf[lsb] = 2^15 * phi_int / phi_int_full_voltage = 2^-1 * phi_int * inv_vbat / phi_int_100
+
+imaginary part of magnetic field proportional to inductor voltage:
+
+Vimag[lsb] = 2^-50 * phi_int * I[lsb] * induct_scale * inv_vbat * imag_impedance
+
+angle to subtract later from detected angle:
+
+phi_mfa_comp[lsb] = 2^-2 * 2^16 * Vimag[lsb] / ( Vreal[lsb] + |Vimag[lsb]| )
+
+phi_mfa_comp[lsb] = 2^-2 * 2^16 * 2^-14 * mfa_x * Ireal[lsb] / (2^12 + | 2^-14 * mfa_x * Ireal[lsb] | )
+
+mfa_x = 2^-23 * induct_scale * imag_impedance * phi_int_100
+
+or
+
+phi_int_max_display = ( phi_int_measured / ( ampli_real_measured[lsb] - I_real_measured[lsb] * 2^-26 * real_impedance * inv_vbat ) )
+
+mfa_x = 2^-39 * induct_scale * imag_impedance * phi_int_max_display * inv_vbat0
+
+
+###################################################################################################################
+
+
+For phase delay compensation (to clean up step response of motor in phase control loop)
+
+motor_filt_coeff = 2^16 * R/(fs*L)
+
+R = V_real[lsb] / I[lsb]
+fs*L = (1/(2*pi))V_imag[lsb] / I[lsb], for phi_int = 2^16
+
+motor_filt_coeff = 2^16 * 2*pi * V_real[lsb] / V_imag[lsb]
+V_real[lsb] = I[lsb] * 2^-26 * real_impedance * inv_vbat
+V_imag[lsb] = 2^-50 * phi_int * I[lsb] * induct_scale * inv_vbat * imag_impedance
+->
+motor_filt_coeff = 2^8 *2*pi* real_impedance / (2^-16*induct_scale * imag_impedance)
+
+add_to_vmotor = j *         phi_added_2nd * 2*pi/(65536*aLR) * predicted_i_motor(z-1);
+add_to_vmotor = j * 2^-14 * phi_added_2nd *   2^-2*2*pi/aLR  * predicted_I_motor(z-1);    aLR = R/(fs*L)
+add_to_vmotor = j * 2^-14 * phi_added_2nd * phase_comp_coeff * predicted_I_motor(z-1);    aLR = R/(fs*L)
+
+phase_comp_coeff = 2^-2 * 2*pi/( R/(fs*L) ) = 2^16 * 2^-2 * 2*pi / motor_filt_coeff
+
+###################################################################################################################
+
+1st order filter coefficient, relationship to tau
+
+tau = L/R or 1/RC
+
+alpha = 1/(fs * tau), with fs = sample freq
+
+1st_order_filter_coeff = 2^16*alpha = 2^16*mlc / (30e6 * tau[sec])
+
+tau[sec] = 0.001 * tau[8.8 in msec] * 2^-8
+
+1st_order_filt_coeff = 559 * mlc / tau[8.8 in msec]
+
+tau[8.8 in msec] = 559 * mlc / 1st_order_filt_coeff 
+
+###################################################################################################################
+

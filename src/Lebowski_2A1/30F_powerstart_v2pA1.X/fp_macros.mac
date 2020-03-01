@@ -1,0 +1,102 @@
+;************************************************************************************
+
+.macro unsigned_to_fp source destination
+    
+    lsr \source, wreg
+	fbcl w0, w3
+	mov w3, \destination
+    inc \destination
+	neg w3, w3
+	sl w0, w3, w0
+	mov w0, \destination+2
+
+.endm
+
+;************************************************************************************
+
+.macro signed_to_fp source destination
+    
+    mov \source, w0
+	fbcl w0, w3
+	mov w3, \destination
+	neg w3, w3
+	sl w0, w3, w0
+	mov w0, \destination+2
+
+.endm
+	
+;************************************************************************************
+
+
+.macro signed32_to_fp source destination
+    
+    mov \source, w3
+    mov \source+2, w2
+	fbcl w3, w0
+    mov w0, \destination
+    neg w0, w0
+    sl w3, w0, w3
+    subr w0, #16, w0
+    lsr w2, w0, w2
+    ior w3, w2, w3
+    mov w3, \destination+2
+
+.endm
+	
+;************************************************************************************
+
+.macro signed_w0_to_fp destination
+    
+	fbcl w0, w3
+	mov w3, \destination
+	neg w3, w3
+	sl w0, w3, w0
+	mov w0, \destination+2
+
+.endm
+	
+;************************************************************************************
+
+
+.macro signed32_w3w2_to_fp destination
+    
+	fbcl w3, w0
+    mov w0, \destination
+    neg w0, w0
+    sl w3, w0, w3
+    subr w0, #16, w0
+    lsr w2, w0, w2
+    ior w3, w2, w3
+    mov w3, \destination+2
+
+.endm
+	
+;************************************************************************************
+
+.macro reg_copy
+	mov [w12++], [w13++]
+	mov [w12--], [w13--]
+.endm
+
+;************************************************************************************
+
+.macro fp_to_int source destination
+
+    neg \source, wreg
+	mov \source+2, \destination
+	asr \destination, w0, \destination
+                                            ;overflow if w0 negative
+    btss w0, #15
+    bra 9f
+                                            ;max out \destination
+    mov #0x7FFF, \destination
+    btsc \source+2, #15
+    mov #0x8001, \destination
+9:
+
+.endm
+
+;************************************************************************************
+
+
+	

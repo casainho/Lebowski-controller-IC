@@ -1,0 +1,223 @@
+;************************************************************************************
+
+.macro print_txt txt
+
+    mov #tblpage(\txt), w0
+    mov #tbloffset(\txt), w1
+    call tx_str_232
+
+.endm
+
+	
+;************************************************************************************
+
+.macro print_udec
+	
+	mov #str_buf, w1
+    call word_to_udec_str
+    mov #str_buf, w0
+    call tx_ram_str_232
+	
+.endm
+	
+;************************************************************************************
+
+.macro print_sdec
+	
+	mov #str_buf, w1
+    call word_to_sdec_str
+    mov #str_buf, w0
+    call tx_ram_str_232
+	
+.endm
+	
+;************************************************************************************
+
+.macro print_frac x
+	
+    mov #str_buf, w1
+    call word_to_01_str
+    clr.b str_buf+1+\x
+    mov #str_buf, w0
+    call tx_ram_str_232
+	
+.endm
+	
+;************************************************************************************
+
+.macro print_hex
+	
+	mov #str_buf, w1
+    call word_to_hex_str
+    mov #str_buf, w0
+    call tx_ram_str_232
+	
+.endm
+	
+;************************************************************************************
+
+.macro print_sign
+	
+    push w0
+    mov w0, w1
+	mov #'-', w0
+    btsc w1, #15
+	call tx_char_232
+    pop w0
+    btsc w0, #15
+    neg w0, w0
+
+.endm
+	
+;************************************************************************************
+
+.macro print_CR
+	
+	mov #'\n', w0
+	call tx_char_232
+	
+.endm
+	
+;************************************************************************************
+
+.macro print_tab
+	
+	mov #'\t', w0
+	call tx_char_232
+	
+.endm
+	
+;************************************************************************************
+
+.macro print_fp reg
+	
+	mov \reg+2, w0
+ 	mov #str_buf, w1
+    call word_to_sdec_str
+    mov #str_buf, w0
+    call tx_ram_str_232
+
+ 	mov #'^', w0
+	call tx_char_232   
+
+	mov \reg, w0
+ 	mov #str_buf, w1
+    call word_to_sdec_str
+    mov #str_buf, w0
+    call tx_ram_str_232
+	
+.endm
+	
+;************************************************************************************
+
+.macro print_imp_data
+
+    print_CR
+    print_CR
+
+    mov #data_collected, w13
+
+    do #10, 1f
+
+    mov [w13++], w0
+    print_hex
+    print_tab
+    mov [w13++], w0
+    print_hex
+    print_tab
+    mov [w13++], w0
+    print_hex
+    print_CR
+1:
+    nop
+
+.endm
+
+;************************************************************************************
+
+.macro print_data_for_matrix
+
+    print_CR
+    print_CR
+
+    mov #data_for_matrix, w13
+
+    do #10, 1f
+
+    mov [w13++], w0
+    print_hex
+    print_tab
+    mov [w13++], w0
+    print_hex
+    print_CR
+1:
+    nop
+
+.endm
+
+;************************************************************************************
+/*
+.macro print_matrix
+
+    print_CR
+    print_CR
+
+    mov #matrix, w13
+
+    do #3, 1f
+
+	mov #'\0', w0
+	call tx_char_232
+	mov #'\x', w0
+	call tx_char_232
+    mov [w13++], w0
+    print_hex
+    mov [w13++], w0
+    print_hex
+    print_tab
+
+	mov #'\0', w0
+	call tx_char_232
+	mov #'\x', w0
+	call tx_char_232
+    mov [w13++], w0
+    print_hex
+    mov [w13++], w0
+    print_hex
+    print_tab
+
+	mov #'\0', w0
+	call tx_char_232
+	mov #'\x', w0
+	call tx_char_232
+    mov [w13++], w0
+    print_hex
+    mov [w13++], w0
+    print_hex
+    print_tab
+
+	mov #'\0', w0
+	call tx_char_232
+	mov #'\x', w0
+	call tx_char_232
+    mov [w13++], w0
+    print_hex
+    mov [w13++], w0
+    print_hex
+    print_tab
+
+	mov #'\0', w0
+	call tx_char_232
+	mov #'\x', w0
+	call tx_char_232
+    mov [w13++], w0
+    print_hex
+    mov [w13++], w0
+    print_hex
+    print_CR
+1:
+    nop
+
+.endm
+*/
+;************************************************************************************

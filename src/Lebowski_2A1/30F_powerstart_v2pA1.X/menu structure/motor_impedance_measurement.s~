@@ -1,0 +1,129 @@
+
+.include "p30F4011.inc"
+.include "defines.inc"
+
+.text
+
+;*****************************************************************
+.global current_sensor_offset_measurement
+current_sensor_offset_measurement:
+;---------------------------------------------- initialise
+    call reset_filters
+                                                    ;turn on PWM
+	bset PTCON, #15
+                                                    ;switch ADCs over to current measurement, wait a bit before 1st measurement
+    call ADC_current
+
+;----------------------------------------------
+; fix rotor for 40000 cycles
+;----------------------------------------------
+
+    mov pwm_period, w0
+
+	mov w0, PDC1
+	mov w0, PDC2
+	mov w0, PDC3
+
+    mov #40000, w0
+    mov w0, counter
+csom_fix:
+    btss IFS0, #3
+    bra csom_fix
+    bclr IFS0, #3
+
+    dec counter
+    bra nz, csom_fix
+
+;----------------------------------------------
+; ramp up hf tone over 16384 cycles
+;----------------------------------------------
+
+;---------------------------------------------- initialise
+
+    clr ampli_real
+    clr ampli_prop
+    clr ampli_imag
+    clr ampli_hf_motor
+    clr phi_hf_motor
+    clr phi_hf_demod_offset
+    clr phi_motor
+                                                    ;start first current measurement
+    bclr ADCON1, #1
+
+csom_ramp:
+    btss IFS0, #3
+    bra csom_ramp
+    bclr IFS0, #3
+;---------------------------------------------- get measured currents
+    call ADC_read_current
+    bclr ADCON1, #1
+;---------------------------------------------- filter currents for finding current sensor offset
+    mov w4, w8
+    mov #notch_hf_I, w13
+    call notch_hf
+    mov #70, w11
+    mov #filter_I, w13
+    call filter_2nd_order
+
+    mov w5, w8
+    mov #notch_hf_Q, w13
+    call notch_hf
+    mov #70, w11
+    mov #filter_Q, w13
+    call filter_2nd_order
+
+    mov w6, w8
+    mov #notch_hf_C, w13
+    call notch_hf
+    mov #70, w11
+    mov #filter_spd, w13
+    call filter_2nd_order
+;---------------------------------------------- ramp up wanted hf level
+    mov i_force_position, w1
+                                                    ;w1: wanted hf current
+    mov #8, w0
+    mul counter
+                                                    ;as long as w3=0, w2 contains ramp up factor, w1 = w1*w2
+                                                    ;if w3 <> 0, skip the mult of w1 and w2, keep w1
+    cp0 w3
+    btsc SR, #Z
+    mul.uu w1, w2, w0
+                                                    ;now wanted current in w1
+    mov w1, w2
+;---------------------------------------------- regulate hf
+    call hf_control
+;---------------------------------------------- increase hf phase, send to motor
+    mov #2048, w0
+    add phi_hf_motor
+
+    call write_motor_sinus
+;---------------------------------------------- end when counter has reached 32768
+    inc counter
+    mov #16384, w0
+    cp counter
+    bra nz, csom_ramp
+
+;---------------------------------------------- turn off PWM
+
+	bclr PTCON, #15
+
+;----------------------------------------------
+; store results
+;----------------------------------------------
+                                                ;div by 32 instead of 16 because of the gain of 2 in the notch filter
+    mov filter_I+4, w0
+    asr w0, #5, w0
+    add adc_current_offset
+
+    mov filter_Q+4, w0
+    asr w0, #5, w0
+    add adc_current_offset+2
+
+    mov filter_spd+4, w0
+    asr w0, #5, w0
+    add adc_current_offset+4
+
+    return
+
+.end
+

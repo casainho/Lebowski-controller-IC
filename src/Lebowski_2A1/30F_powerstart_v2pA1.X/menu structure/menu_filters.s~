@@ -1,0 +1,202 @@
+.include "p30F4011.inc"
+.include "defines.inc"
+
+.text
+.global menu_erpms
+menu_erpms:
+    call clr_scr_232
+;------------------------------------------------------
+;a) erpm limit
+;------------------------------------------------------
+    mov #tblpage(erpms_mes_a), w0
+    mov #tbloffset(erpms_mes_a), w1
+    call tx_str_232
+                                                        ;erpm = (pime / 65536) * (30e6/mlc) * 60 =>
+                                                        ;erpm = 27466 * phi_int_max_erpm / mlc
+    mov phi_int_max_erpm, w0
+    mov #7031, w1                                           ;w1 = 27.466 in 8.8 -> 	7031
+    mul.uu w0, w1, w0
+    mov main_loop_count, w2
+    repeat #17
+    div.ud w0, w2
+                                                            ;now w0: answer in 8.8 format
+    mov w0, w2
+    lsr w0, #8, w0
+    mov #str_buf, w1
+    call word_to_udec_str
+    mov #str_buf, w0
+    call tx_ram_str_232
+    sl w2, #8, w0
+    mov #str_buf, w1
+    call word_to_01_str
+    clr.b str_buf+3
+    mov #str_buf, w0
+    call tx_ram_str_232
+
+    mov #tblpage(erpms_mes_a1), w0
+    mov #tbloffset(erpms_mes_a1), w1
+    call tx_str_232
+
+    bra me_msg_b
+
+me_opt_a:
+
+    mov #10, w0
+    call get_signed_decimal_number
+                                                            ;convert to 8.8 format, times mlc, divide by 27.466 (7031 in 8.8)
+    sl w0, #8, w0
+    lsr w1, #8, w1
+    ior w0, w1, w0
+
+    mov main_loop_count, w1
+    mul.uu w0, w1, w0
+    mov #7031, w2
+    repeat #17
+    div.ud w0, w2
+
+    mov w0, phi_int_max_erpm
+                                                            ;phi_int_max_erpm_shutdown = 1.2 * phi_int_max_erpm
+    mov w0, phi_int_max_erpm_shutdown
+    mov #13000, w1
+    mul.uu w0, w1, w0
+    mov w1, w0
+    add phi_int_max_erpm_shutdown
+
+    bra menu_erpms
+
+;------------------------------------------------------
+;b) transition erpm drive 2 -> 3
+;------------------------------------------------------
+me_msg_b:
+    mov #tblpage(erpms_mes_b), w0
+    mov #tbloffset(erpms_mes_b), w1
+    call tx_str_232
+                                                            ;erpm = phi_int_2to3 * 27466 / main_loop_count
+    mov phi_int_2to3, w0
+    mov #27466, w1
+    mul.uu w0, w1, w0
+    mov main_loop_count, w2
+    repeat #17
+    div.ud w0, w2
+
+    mov #str_buf, w1
+    call word_to_udec_str
+    mov #str_buf, w0
+    call tx_ram_str_232
+
+    mov #tblpage(erpms_mes_b1), w0
+    mov #tbloffset(erpms_mes_b1), w1
+    call tx_str_232
+
+    bra me_msg_c
+
+me_opt_b:
+                                                            ;get new e-rpm limit
+    mov #4, w0
+    call get_number
+                                                            ;phi_int_2to3 = e-rpm * main_loop_count / 27466
+    mov main_loop_count, w1
+    mul.uu w0, w1, w0
+    mov #27466, w2
+    repeat #17
+    div.ud w0, w2
+
+    mov w0, phi_int_2to3
+
+    bra menu_erpms
+
+;------------------------------------------------------
+;c) transition erpm drive 3 -> 2
+;------------------------------------------------------
+me_msg_c:
+    mov #tblpage(erpms_mes_c), w0
+    mov #tbloffset(erpms_mes_c), w1
+    call tx_str_232
+                                                            ;erpm = phi_int_3to2 * 27466 / main_loop_count
+    mov phi_int_3to2, w0
+    mov #27466, w1
+    mul.uu w0, w1, w0
+    mov main_loop_count, w2
+    repeat #17
+    div.ud w0, w2
+
+    mov #str_buf, w1
+    call word_to_udec_str
+    mov #str_buf, w0
+    call tx_ram_str_232
+
+    mov #tblpage(erpms_mes_c1), w0
+    mov #tbloffset(erpms_mes_c1), w1
+    call tx_str_232
+
+    bra me_msg_z
+
+me_opt_c:
+                                                            ;get new e-rpm limit
+    mov #4, w0
+    call get_number
+                                                            ;phi_int_3to2 = e-rpm * main_loop_count / 27466
+    mov main_loop_count, w1
+    mul.uu w0, w1, w0
+    mov #27466, w2
+    repeat #17
+    div.ud w0, w2
+
+    mov w0, phi_int_3to2
+
+    bra menu_erpms
+
+;------------------------------------------------------
+;z) return to main menu
+;------------------------------------------------------
+me_msg_z:
+    mov #tblpage(erpms_mes_z), w0
+    mov #tbloffset(erpms_mes_z), w1
+    call tx_str_232
+
+    bra me_msg_choise
+me_opt_z:
+    return
+
+;------------------------------------------------------
+me_msg_choise:
+
+    call get_choise
+
+    mov #'a', w1
+    cp w0, w1
+    bra z, me_opt_a
+    mov #'b', w1
+    cp w0, w1
+    bra z, me_opt_b
+    mov #'c', w1
+    cp w0, w1
+    bra z, me_opt_c
+    mov #'z', w1
+    cp w0, w1
+    bra z, me_opt_z
+
+    bra menu_erpms
+
+;**********************************************************
+
+erpms_mes_a:
+    .ascii "\na) erpm limit: \0"
+erpms_mes_a1:
+    .ascii " k-erpm\0"
+erpms_mes_b:
+    .ascii "\nb) transition erpm drive 2 -> 3: \0"
+erpms_mes_b1:
+    .ascii " erpm\0"
+erpms_mes_c:
+    .ascii "\nc) transition erpm drive 3 -> 2: \0"
+erpms_mes_c1:
+    .ascii " erpm\0"
+erpms_mes_z:
+    .ascii "\n\nz) return to main menu"
+    .ascii "\n\n\0"
+
+
+
+.end
+

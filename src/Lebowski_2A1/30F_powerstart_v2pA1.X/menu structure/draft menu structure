@@ -1,0 +1,22 @@
+
+
+
+
+
+auto:
+phase 0,1,2nd order
+amp 0,1st order
+max amplitude
+
+
+filter menu
+auto
+
+motor measure menu
+-gain and offset calibration
+-current,rpm for FOC measurement
+
+can menu
+
+rom menu
+
